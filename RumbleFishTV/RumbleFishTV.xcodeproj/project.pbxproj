@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F74EBC98212D449C00FE351B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74EBC97212D449C00FE351B /* AppDelegate.swift */; };
-		F74EBC9A212D449C00FE351B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74EBC99212D449C00FE351B /* ViewController.swift */; };
 		F74EBC9D212D449C00FE351B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74EBC9B212D449C00FE351B /* Main.storyboard */; };
 		F74EBC9F212D44A100FE351B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F74EBC9E212D44A100FE351B /* Assets.xcassets */; };
 		F74EBCA2212D44A100FE351B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74EBCA0212D44A100FE351B /* LaunchScreen.storyboard */; };
@@ -36,7 +35,6 @@
 /* Begin PBXFileReference section */
 		F74EBC94212D449C00FE351B /* RumbleFishTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RumbleFishTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F74EBC97212D449C00FE351B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F74EBC99212D449C00FE351B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F74EBC9C212D449C00FE351B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F74EBC9E212D44A100FE351B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F74EBCA1212D44A100FE351B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,8 +95,8 @@
 		F74EBC96212D449C00FE351B /* RumbleFishTV */ = {
 			isa = PBXGroup;
 			children = (
+				F74EBCC5212D585300FE351B /* Classes */,
 				F74EBC97212D449C00FE351B /* AppDelegate.swift */,
-				F74EBC99212D449C00FE351B /* ViewController.swift */,
 				F74EBC9B212D449C00FE351B /* Main.storyboard */,
 				F74EBC9E212D44A100FE351B /* Assets.xcassets */,
 				F74EBCA0212D44A100FE351B /* LaunchScreen.storyboard */,
@@ -123,6 +121,61 @@
 				F74EBCB9212D44A100FE351B /* Info.plist */,
 			);
 			path = RumbleFishTVUITests;
+			sourceTree = "<group>";
+		};
+		F74EBCC5212D585300FE351B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F74EBCCB212D585300FE351B /* Tools */,
+				F74EBCC9212D585300FE351B /* Main */,
+				F74EBCC7212D585300FE351B /* Home */,
+				F74EBCC8212D585300FE351B /* Live */,
+				F74EBCC6212D585300FE351B /* Follow */,
+				F74EBCCA212D585300FE351B /* Profile */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F74EBCC6212D585300FE351B /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		F74EBCC7212D585300FE351B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F74EBCC8212D585300FE351B /* Live */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Live;
+			sourceTree = "<group>";
+		};
+		F74EBCC9212D585300FE351B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F74EBCCA212D585300FE351B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		F74EBCCB212D585300FE351B /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +310,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F74EBC9A212D449C00FE351B /* ViewController.swift in Sources */,
 				F74EBC98212D449C00FE351B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
