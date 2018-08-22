@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F74EBC98212D449C00FE351B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74EBC97212D449C00FE351B /* AppDelegate.swift */; };
+		F74EBC9A212D449C00FE351B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74EBC99212D449C00FE351B /* ViewController.swift */; };
+		F74EBC9D212D449C00FE351B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74EBC9B212D449C00FE351B /* Main.storyboard */; };
+		F74EBC9F212D44A100FE351B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F74EBC9E212D44A100FE351B /* Assets.xcassets */; };
+		F74EBCA2212D44A100FE351B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74EBCA0212D44A100FE351B /* LaunchScreen.storyboard */; };
+		F74EBCAD212D44A100FE351B /* RumbleFishTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74EBCAC212D44A100FE351B /* RumbleFishTVTests.swift */; };
+		F74EBCB8212D44A100FE351B /* RumbleFishTVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74EBCB7212D44A100FE351B /* RumbleFishTVUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F74EBCA9212D44A100FE351B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F74EBC8C212D449C00FE351B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F74EBC93212D449C00FE351B;
+			remoteInfo = RumbleFishTV;
+		};
+		F74EBCB4212D44A100FE351B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F74EBC8C212D449C00FE351B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F74EBC93212D449C00FE351B;
+			remoteInfo = RumbleFishTV;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F74EBC94212D449C00FE351B /* RumbleFishTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RumbleFishTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F74EBC97212D449C00FE351B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F74EBC99212D449C00FE351B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F74EBC9C212D449C00FE351B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F74EBC9E212D44A100FE351B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F74EBCA1212D44A100FE351B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F74EBCA3212D44A100FE351B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F74EBCA8212D44A100FE351B /* RumbleFishTVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RumbleFishTVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F74EBCAC212D44A100FE351B /* RumbleFishTVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumbleFishTVTests.swift; sourceTree = "<group>"; };
+		F74EBCAE212D44A100FE351B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F74EBCB3212D44A100FE351B /* RumbleFishTVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RumbleFishTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F74EBCB7212D44A100FE351B /* RumbleFishTVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumbleFishTVUITests.swift; sourceTree = "<group>"; };
+		F74EBCB9212D44A100FE351B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F74EBC91212D449C00FE351B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F74EBCA5212D44A100FE351B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F74EBCB0212D44A100FE351B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F74EBC8B212D449C00FE351B = {
+			isa = PBXGroup;
+			children = (
+				F74EBC96212D449C00FE351B /* RumbleFishTV */,
+				F74EBCAB212D44A100FE351B /* RumbleFishTVTests */,
+				F74EBCB6212D44A100FE351B /* RumbleFishTVUITests */,
+				F74EBC95212D449C00FE351B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F74EBC95212D449C00FE351B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F74EBC94212D449C00FE351B /* RumbleFishTV.app */,
+				F74EBCA8212D44A100FE351B /* RumbleFishTVTests.xctest */,
+				F74EBCB3212D44A100FE351B /* RumbleFishTVUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F74EBC96212D449C00FE351B /* RumbleFishTV */ = {
+			isa = PBXGroup;
+			children = (
+				F74EBC97212D449C00FE351B /* AppDelegate.swift */,
+				F74EBC99212D449C00FE351B /* ViewController.swift */,
+				F74EBC9B212D449C00FE351B /* Main.storyboard */,
+				F74EBC9E212D44A100FE351B /* Assets.xcassets */,
+				F74EBCA0212D44A100FE351B /* LaunchScreen.storyboard */,
+				F74EBCA3212D44A100FE351B /* Info.plist */,
+			);
+			path = RumbleFishTV;
+			sourceTree = "<group>";
+		};
+		F74EBCAB212D44A100FE351B /* RumbleFishTVTests */ = {
+			isa = PBXGroup;
+			children = (
+				F74EBCAC212D44A100FE351B /* RumbleFishTVTests.swift */,
+				F74EBCAE212D44A100FE351B /* Info.plist */,
+			);
+			path = RumbleFishTVTests;
+			sourceTree = "<group>";
+		};
+		F74EBCB6212D44A100FE351B /* RumbleFishTVUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F74EBCB7212D44A100FE351B /* RumbleFishTVUITests.swift */,
+				F74EBCB9212D44A100FE351B /* Info.plist */,
+			);
+			path = RumbleFishTVUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F74EBC93212D449C00FE351B /* RumbleFishTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F74EBCBC212D44A100FE351B /* Build configuration list for PBXNativeTarget "RumbleFishTV" */;
+			buildPhases = (
+				F74EBC90212D449C00FE351B /* Sources */,
+				F74EBC91212D449C00FE351B /* Frameworks */,
+				F74EBC92212D449C00FE351B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RumbleFishTV;
+			productName = RumbleFishTV;
+			productReference = F74EBC94212D449C00FE351B /* RumbleFishTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F74EBCA7212D44A100FE351B /* RumbleFishTVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F74EBCBF212D44A100FE351B /* Build configuration list for PBXNativeTarget "RumbleFishTVTests" */;
+			buildPhases = (
+				F74EBCA4212D44A100FE351B /* Sources */,
+				F74EBCA5212D44A100FE351B /* Frameworks */,
+				F74EBCA6212D44A100FE351B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F74EBCAA212D44A100FE351B /* PBXTargetDependency */,
+			);
+			name = RumbleFishTVTests;
+			productName = RumbleFishTVTests;
+			productReference = F74EBCA8212D44A100FE351B /* RumbleFishTVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F74EBCB2212D44A100FE351B /* RumbleFishTVUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F74EBCC2212D44A100FE351B /* Build configuration list for PBXNativeTarget "RumbleFishTVUITests" */;
+			buildPhases = (
+				F74EBCAF212D44A100FE351B /* Sources */,
+				F74EBCB0212D44A100FE351B /* Frameworks */,
+				F74EBCB1212D44A100FE351B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F74EBCB5212D44A100FE351B /* PBXTargetDependency */,
+			);
+			name = RumbleFishTVUITests;
+			productName = RumbleFishTVUITests;
+			productReference = F74EBCB3212D44A100FE351B /* RumbleFishTVUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F74EBC8C212D449C00FE351B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = MKTECH;
+				TargetAttributes = {
+					F74EBC93212D449C00FE351B = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					F74EBCA7212D44A100FE351B = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = F74EBC93212D449C00FE351B;
+					};
+					F74EBCB2212D44A100FE351B = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = F74EBC93212D449C00FE351B;
+					};
+				};
+			};
+			buildConfigurationList = F74EBC8F212D449C00FE351B /* Build configuration list for PBXProject "RumbleFishTV" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F74EBC8B212D449C00FE351B;
+			productRefGroup = F74EBC95212D449C00FE351B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F74EBC93212D449C00FE351B /* RumbleFishTV */,
+				F74EBCA7212D44A100FE351B /* RumbleFishTVTests */,
+				F74EBCB2212D44A100FE351B /* RumbleFishTVUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F74EBC92212D449C00FE351B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F74EBCA2212D44A100FE351B /* LaunchScreen.storyboard in Resources */,
+				F74EBC9F212D44A100FE351B /* Assets.xcassets in Resources */,
+				F74EBC9D212D449C00FE351B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F74EBCA6212D44A100FE351B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F74EBCB1212D44A100FE351B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F74EBC90212D449C00FE351B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F74EBC9A212D449C00FE351B /* ViewController.swift in Sources */,
+				F74EBC98212D449C00FE351B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F74EBCA4212D44A100FE351B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F74EBCAD212D44A100FE351B /* RumbleFishTVTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F74EBCAF212D44A100FE351B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F74EBCB8212D44A100FE351B /* RumbleFishTVUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F74EBCAA212D44A100FE351B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F74EBC93212D449C00FE351B /* RumbleFishTV */;
+			targetProxy = F74EBCA9212D44A100FE351B /* PBXContainerItemProxy */;
+		};
+		F74EBCB5212D44A100FE351B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F74EBC93212D449C00FE351B /* RumbleFishTV */;
+			targetProxy = F74EBCB4212D44A100FE351B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F74EBC9B212D449C00FE351B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F74EBC9C212D449C00FE351B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F74EBCA0212D44A100FE351B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F74EBCA1212D44A100FE351B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F74EBCBA212D44A100FE351B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F74EBCBB212D44A100FE351B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F74EBCBD212D44A100FE351B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C65X67CW5H;
+				INFOPLIST_FILE = RumbleFishTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gotech.RumbleFishTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F74EBCBE212D44A100FE351B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C65X67CW5H;
+				INFOPLIST_FILE = RumbleFishTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gotech.RumbleFishTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F74EBCC0212D44A100FE351B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C65X67CW5H;
+				INFOPLIST_FILE = RumbleFishTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gotech.RumbleFishTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RumbleFishTV.app/RumbleFishTV";
+			};
+			name = Debug;
+		};
+		F74EBCC1212D44A100FE351B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C65X67CW5H;
+				INFOPLIST_FILE = RumbleFishTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gotech.RumbleFishTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RumbleFishTV.app/RumbleFishTV";
+			};
+			name = Release;
+		};
+		F74EBCC3212D44A100FE351B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C65X67CW5H;
+				INFOPLIST_FILE = RumbleFishTVUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gotech.RumbleFishTVUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RumbleFishTV;
+			};
+			name = Debug;
+		};
+		F74EBCC4212D44A100FE351B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C65X67CW5H;
+				INFOPLIST_FILE = RumbleFishTVUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gotech.RumbleFishTVUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RumbleFishTV;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F74EBC8F212D449C00FE351B /* Build configuration list for PBXProject "RumbleFishTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F74EBCBA212D44A100FE351B /* Debug */,
+				F74EBCBB212D44A100FE351B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F74EBCBC212D44A100FE351B /* Build configuration list for PBXNativeTarget "RumbleFishTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F74EBCBD212D44A100FE351B /* Debug */,
+				F74EBCBE212D44A100FE351B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F74EBCBF212D44A100FE351B /* Build configuration list for PBXNativeTarget "RumbleFishTVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F74EBCC0212D44A100FE351B /* Debug */,
+				F74EBCC1212D44A100FE351B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F74EBCC2212D44A100FE351B /* Build configuration list for PBXNativeTarget "RumbleFishTVUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F74EBCC3212D44A100FE351B /* Debug */,
+				F74EBCC4212D44A100FE351B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F74EBC8C212D449C00FE351B /* Project object */;
+}
