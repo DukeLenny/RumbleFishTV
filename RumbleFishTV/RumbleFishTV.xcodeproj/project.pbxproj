@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F73E0ACC21369BF500DD2960 /* RFHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E0ACB21369BF500DD2960 /* RFHomeViewController.swift */; };
+		F73E0AD82136A05300DD2960 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E0ACE2136A05200DD2960 /* Bundle+Extension.swift */; };
+		F73E0ADA2136A05300DD2960 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E0AD02136A05200DD2960 /* UIBarButtonItem+Extension.swift */; };
+		F73E0ADB2136A05300DD2960 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E0AD12136A05200DD2960 /* UIButton+Extension.swift */; };
+		F73E0ADC2136A05300DD2960 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E0AD22136A05200DD2960 /* UIColor+Extension.swift */; };
+		F73E0ADD2136A05300DD2960 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E0AD32136A05200DD2960 /* UILabel+Extension.swift */; };
+		F73E0ADE2136A05300DD2960 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E0AD52136A05300DD2960 /* Constant.swift */; };
+		F73E0ADF2136A05300DD2960 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E0AD62136A05300DD2960 /* Function.swift */; };
+		F73E0AE02136A05300DD2960 /* URLString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E0AD72136A05300DD2960 /* URLString.swift */; };
 		F74A86F5212EC22D001A858F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74A86F4212EC22D001A858F /* Home.storyboard */; };
 		F74A86F7212EC42B001A858F /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74A86F6212EC42B001A858F /* Live.storyboard */; };
 		F74A86F9212EC4CD001A858F /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74A86F8212EC4CD001A858F /* Follow.storyboard */; };
@@ -38,6 +47,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F73E0ACB21369BF500DD2960 /* RFHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFHomeViewController.swift; sourceTree = "<group>"; };
+		F73E0ACE2136A05200DD2960 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		F73E0AD02136A05200DD2960 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		F73E0AD12136A05200DD2960 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		F73E0AD22136A05200DD2960 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		F73E0AD32136A05200DD2960 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		F73E0AD52136A05300DD2960 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F73E0AD62136A05300DD2960 /* Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
+		F73E0AD72136A05300DD2960 /* URLString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLString.swift; sourceTree = "<group>"; };
 		F74A86F4212EC22D001A858F /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		F74A86F6212EC42B001A858F /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
 		F74A86F8212EC4CD001A858F /* Follow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Follow.storyboard; sourceTree = "<group>"; };
@@ -82,6 +100,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F73E0ACD2136A05200DD2960 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F73E0ACE2136A05200DD2960 /* Bundle+Extension.swift */,
+				F73E0AD02136A05200DD2960 /* UIBarButtonItem+Extension.swift */,
+				F73E0AD12136A05200DD2960 /* UIButton+Extension.swift */,
+				F73E0AD22136A05200DD2960 /* UIColor+Extension.swift */,
+				F73E0AD32136A05200DD2960 /* UILabel+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F73E0AD42136A05300DD2960 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				F73E0AD52136A05300DD2960 /* Constant.swift */,
+				F73E0AD62136A05300DD2960 /* Function.swift */,
+				F73E0AD72136A05300DD2960 /* URLString.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		F74A86FC212EC655001A858F /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +132,7 @@
 		F74A86FD212EC655001A858F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F73E0ACB21369BF500DD2960 /* RFHomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -213,6 +254,8 @@
 		F74EBCCB212D585300FE351B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				F73E0ACD2136A05200DD2960 /* Extension */,
+				F73E0AD42136A05300DD2960 /* Other */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -353,7 +396,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F74EBC98212D449C00FE351B /* AppDelegate.swift in Sources */,
+				F73E0AD82136A05300DD2960 /* Bundle+Extension.swift in Sources */,
+				F73E0ADD2136A05300DD2960 /* UILabel+Extension.swift in Sources */,
+				F73E0ADF2136A05300DD2960 /* Function.swift in Sources */,
+				F73E0ACC21369BF500DD2960 /* RFHomeViewController.swift in Sources */,
+				F73E0ADC2136A05300DD2960 /* UIColor+Extension.swift in Sources */,
+				F73E0ADA2136A05300DD2960 /* UIBarButtonItem+Extension.swift in Sources */,
 				F74EBCCF212D647100FE351B /* RFNavigationController.swift in Sources */,
+				F73E0ADB2136A05300DD2960 /* UIButton+Extension.swift in Sources */,
+				F73E0ADE2136A05300DD2960 /* Constant.swift in Sources */,
+				F73E0AE02136A05300DD2960 /* URLString.swift in Sources */,
 				F74EBCCD212D623D00FE351B /* RFTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
