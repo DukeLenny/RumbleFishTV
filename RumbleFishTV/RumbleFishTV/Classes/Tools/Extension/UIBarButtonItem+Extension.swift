@@ -9,8 +9,11 @@
 import UIKit
 
 extension UIBarButtonItem {
-    convenience init(title: String = BarButtonItemTitle, titleColor: UIColor = NavigationBarTintColor, font: UIFont = BarButtonItemFont, highlightedTitleColor: UIColor? = NavigationBarHighlightedTintColor, target: Any?, action: Selector, imageName: String? = NavigationBarBackImageName, highlightedImageName: String? = NavigationBarBackHighlightedImageName, horizontalSpace: CGFloat? = nil) {
+    convenience init(title: String = BarButtonItemTitle, titleColor: UIColor = NavigationBarTintColor, font: UIFont = BarButtonItemFont, highlightedTitleColor: UIColor? = NavigationBarHighlightedTintColor, target: Any?, action: Selector, imageName: String? = NavigationBarBackImageName, highlightedImageName: String? = NavigationBarBackHighlightedImageName, horizontalSpace: CGFloat? = nil, frame: CGRect? = nil) {
         let button = UIButton(title: title, titleColor: titleColor, font: font, highlightedTitleColor: highlightedTitleColor, imageName: imageName, highlightedImageName: highlightedImageName, horizontalSpace: horizontalSpace, target: target, action: action)
+        if let frame = frame {
+            button.frame = frame
+        }
         self.init(customView: button)
     }
 }
