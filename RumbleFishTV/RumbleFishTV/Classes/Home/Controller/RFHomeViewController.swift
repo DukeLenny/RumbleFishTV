@@ -8,10 +8,19 @@
 
 import UIKit
 
+fileprivate let kPageTitleViewHeight: CGFloat = 40.0
+
 class RFHomeViewController: UIViewController {
     
+    // MARK: - Property
+    fileprivate lazy var pageTitleView: PageTitleView = {
+        let titles = ["推荐","游戏","娱乐","趣玩"]
+        let frame = CGRect(x: 0, y: TopBarHeight, width: ScreenWidth, height: kPageTitleViewHeight)
+        let pageTitleView = PageTitleView(frame: frame, titles: titles)
+        return pageTitleView
+    }()
+    
     // MARK: - LifeCycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +31,6 @@ class RFHomeViewController: UIViewController {
 
     /*
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
@@ -53,6 +61,10 @@ class RFHomeViewController: UIViewController {
 extension RFHomeViewController {
     fileprivate func setUI() {
         setNavigationItem()
+        
+        automaticallyAdjustsScrollViewInsets = false
+        
+        view.addSubview(pageTitleView)
     }
     
     private func setNavigationItem() {
