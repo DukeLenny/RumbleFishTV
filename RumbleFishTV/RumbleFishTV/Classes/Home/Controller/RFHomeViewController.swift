@@ -20,6 +20,21 @@ class RFHomeViewController: UIViewController {
         return pageTitleView
     }()
     
+    fileprivate lazy var pageContentView: PageContentView = {
+        let pageContentViewY: CGFloat = TopBarHeight + kPageTitleViewHeight
+        let pageContentViewHeight: CGFloat = ScreenHeight - pageContentViewY
+        
+        var childViewControllers = [UIViewController]()
+        for _ in 0..<4 {
+            let childViewController = UIViewController()
+            childViewController.view.backgroundColor = UIColor.random()
+            childViewControllers.append(childViewController)
+        }
+        
+        let pageContentView = PageContentView(frame: CGRect(x: 0.0, y: pageContentViewY, width: ScreenWidth, height: pageContentViewHeight), parentViewController: self, childViewControllers: childViewControllers)
+        return pageContentView
+    }()
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +80,7 @@ extension RFHomeViewController {
         automaticallyAdjustsScrollViewInsets = false
         
         view.addSubview(pageTitleView)
+        view.addSubview(pageContentView)
     }
     
     private func setNavigationItem() {

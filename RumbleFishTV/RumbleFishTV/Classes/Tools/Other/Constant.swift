@@ -27,5 +27,8 @@ let Window = APPDELEGATE?.window
 let StatusBarHeight = Application.statusBarFrame.size.height
 let TopBarHeight = StatusBarHeight + navigationBarHeight()
 
+let HomeIndicatorHeight: CGFloat = UIDevice.isIPhoneX() ? 34.0 : 0.0
+let BottomBarHeight = tabBarHeight() + HomeIndicatorHeight
+
 let SystemVersion = UIDevice.current.systemVersion
 		

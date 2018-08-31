@@ -15,17 +15,30 @@ func pt(_ px: CGFloat) -> CGFloat { return px * 1.15 / 3 * (UIScreen.main.bounds
 func fontSize(_ px: CGFloat) -> CGFloat { return px / 2 / 96 * 72 } // = px * 0.375 ≈ px / 3.0
 
 //MARK:- automaticallyAdjustsScrollViewInsets
-//func setAutomaticallyAdjustsScrollViewInsetsFalse(scrollView: UIScrollView, vc: UIViewController) {
+func setAutomaticallyAdjustsScrollViewInsetsFalse(scrollView: UIScrollView, vc: UIViewController) {
 //    if UIScrollView.propertyList().contains("contentInsetAdjustmentBehavior") {
 //        scrollView.setValue(2, forKey: "contentInsetAdjustmentBehavior") // .never
 //    } else {
 //        vc.automaticallyAdjustsScrollViewInsets = false
 //    }
-//}
+    if #available(iOS 11.0, *) {
+        scrollView.contentInsetAdjustmentBehavior = .never
+    } else {
+        vc.automaticallyAdjustsScrollViewInsets = false
+    }
+}
 
 //MARK:- 获取导航栏的高度
 func navigationBarHeight() -> CGFloat {
     let viewController = UIViewController()
     let navigationController = UINavigationController(rootViewController: viewController)
     return navigationController.navigationBar.bounds.size.height
+}
+
+//MARK: - 获取选项卡的高度
+func tabBarHeight() -> CGFloat {
+    let viewController = UIViewController()
+    let tabBarController = UITabBarController()
+    tabBarController.addChildViewController(viewController)
+    return tabBarController.tabBar.bounds.height
 }

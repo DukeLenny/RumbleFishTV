@@ -28,6 +28,8 @@
 		F74EBCCD212D623D00FE351B /* RFTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74EBCCC212D623D00FE351B /* RFTabBarController.swift */; };
 		F74EBCCF212D647100FE351B /* RFNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74EBCCE212D647100FE351B /* RFNavigationController.swift */; };
 		F74FCE692137CD0B00AB28DD /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74FCE682137CD0B00AB28DD /* PageTitleView.swift */; };
+		F76610262139273900F2981F /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76610252139273900F2981F /* PageContentView.swift */; };
+		F766102821392DFF00F2981F /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766102721392DFF00F2981F /* UIDevice+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		F74EBCCC212D623D00FE351B /* RFTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFTabBarController.swift; sourceTree = "<group>"; };
 		F74EBCCE212D647100FE351B /* RFNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFNavigationController.swift; sourceTree = "<group>"; };
 		F74FCE682137CD0B00AB28DD /* PageTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
+		F76610252139273900F2981F /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
+		F766102721392DFF00F2981F /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 				F73E0AD12136A05200DD2960 /* UIButton+Extension.swift */,
 				F73E0AD22136A05200DD2960 /* UIColor+Extension.swift */,
 				F73E0AD32136A05200DD2960 /* UILabel+Extension.swift */,
+				F766102721392DFF00F2981F /* UIDevice+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				F74FCE682137CD0B00AB28DD /* PageTitleView.swift */,
+				F76610252139273900F2981F /* PageContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -427,6 +433,7 @@
 				F74EBC98212D449C00FE351B /* AppDelegate.swift in Sources */,
 				F73E0AD82136A05300DD2960 /* Bundle+Extension.swift in Sources */,
 				F73E0ADD2136A05300DD2960 /* UILabel+Extension.swift in Sources */,
+				F76610262139273900F2981F /* PageContentView.swift in Sources */,
 				F74FCE692137CD0B00AB28DD /* PageTitleView.swift in Sources */,
 				F73E0ADF2136A05300DD2960 /* Function.swift in Sources */,
 				F73E0ACC21369BF500DD2960 /* RFHomeViewController.swift in Sources */,
@@ -436,6 +443,7 @@
 				F73E0ADB2136A05300DD2960 /* UIButton+Extension.swift in Sources */,
 				F73E0ADE2136A05300DD2960 /* Constant.swift in Sources */,
 				F73E0AE02136A05300DD2960 /* URLString.swift in Sources */,
+				F766102821392DFF00F2981F /* UIDevice+Extension.swift in Sources */,
 				F74EBCCD212D623D00FE351B /* RFTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
