@@ -12,16 +12,16 @@ fileprivate let kCollectionViewCellReuseIdentifier = "UICollectionViewCell"
 
 class PageContentView: UIView {
 
-    fileprivate var parentViewController: UIViewController
+    fileprivate weak var parentViewController: UIViewController?
     fileprivate var childViewControllers: [UIViewController]
     
-    private lazy var collectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {[weak self] in 
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
         collectionViewFlowLayout.minimumLineSpacing = 0.0
         collectionViewFlowLayout.minimumInteritemSpacing = 0.0
-        collectionViewFlowLayout.itemSize = bounds.size
+        collectionViewFlowLayout.itemSize = self!.bounds.size
         collectionViewFlowLayout.scrollDirection = .horizontal
-        let collectionView = UICollectionView(frame: bounds, collectionViewLayout: collectionViewFlowLayout)
+        let collectionView = UICollectionView(frame: self!.bounds, collectionViewLayout: collectionViewFlowLayout)
         collectionView.backgroundColor = UIColor.clear
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -30,11 +30,13 @@ class PageContentView: UIView {
         collectionView.bounces = false
         collectionView.isPagingEnabled = true
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kCollectionViewCellReuseIdentifier)
-        setAutomaticallyAdjustsScrollViewInsetsFalse(scrollView: collectionView, vc: parentViewController)
+        if let parentViewController = self!.parentViewController {
+            setAutomaticallyAdjustsScrollViewInsetsFalse(scrollView: collectionView, vc: parentViewController)
+        }
         return collectionView
     }()
     
-    init(frame: CGRect, parentViewController: UIViewController, childViewControllers: [UIViewController]) {
+    init(frame: CGRect, parentViewController: UIViewController?, childViewControllers: [UIViewController]) {
         self.parentViewController = parentViewController
         self.childViewControllers = childViewControllers
         
@@ -47,6 +49,10 @@ class PageContentView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setCurrentIndex(_ index: Int) {
+        collectionView.setContentOffset(CGPoint(x: CGFloat(index) * collectionView.bounds.width, y: 0.0), animated: false)
+    }
+    
 }
 
 // MARK: - SetUI
@@ -55,7 +61,7 @@ extension PageContentView {
         backgroundColor = UIColor.clear
         
         for childViewController in childViewControllers {
-            parentViewController.addChildViewController(childViewController)
+            parentViewController?.addChildViewController(childViewController)
         }
         
         addSubview(collectionView)

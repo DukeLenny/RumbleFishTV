@@ -11,7 +11,13 @@ import UIKit
 fileprivate let kScrollBarHeight: CGFloat = 2.0
 fileprivate let kLineViewHeight: CGFloat = 0.5
 
+protocol PageTitleViewDelegate: class {
+    func pageTitleView(_ pageTitleView: PageTitleView, didSelectIndex index: Int)
+}
+
 class PageTitleView: UIView {
+    
+    weak var delegate: PageTitleViewDelegate?
     
     fileprivate var titles: [String]
     
@@ -28,7 +34,11 @@ class PageTitleView: UIView {
         return scrollView
     }()
     
+    fileprivate lazy var scrollBar: UIView = UIView()
+    
     fileprivate lazy var titleButtons: [UIButton] = [UIButton]()
+    
+    private var currentIndex: Int = 0
 
     init(frame: CGRect, titles: [String]) {
         self.titles = titles
@@ -43,7 +53,17 @@ class PageTitleView: UIView {
     }
     
     @objc fileprivate func titleButtonClicked(titleButton: UIButton) {
+        let oldTitleButton = titleButtons[currentIndex]
+        oldTitleButton.isSelected = false
+        titleButton.isSelected = true
         
+        currentIndex = titleButton.tag
+        
+        UIView.animate(withDuration: 0.15) {
+            self.scrollBar.frame.origin.x = CGFloat(titleButton.tag) * self.scrollBar.bounds.width
+        }
+        
+        delegate?.pageTitleView(self, didSelectIndex: titleButton.tag)
     }
     
 }
@@ -82,7 +102,8 @@ extension PageTitleView {
     
     private func setScrollBar() {
         let firstTitleButton = titleButtons[0]
-        let scrollBar = UIView(frame: CGRect(x: 0.0, y: scrollView.bounds.height - kScrollBarHeight, width: firstTitleButton.bounds.width, height: kScrollBarHeight))
+//        let scrollBar = UIView(frame: CGRect(x: 0.0, y: scrollView.bounds.height - kScrollBarHeight, width: firstTitleButton.bounds.width, height: kScrollBarHeight))
+        scrollBar.frame = CGRect(x: 0.0, y: scrollView.bounds.height - kScrollBarHeight, width: firstTitleButton.bounds.width, height: kScrollBarHeight)
         scrollBar.backgroundColor = UIColor.orange
         scrollView.addSubview(scrollBar)
     }

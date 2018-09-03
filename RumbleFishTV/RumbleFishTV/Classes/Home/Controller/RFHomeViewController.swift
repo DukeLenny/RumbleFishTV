@@ -13,14 +13,15 @@ fileprivate let kPageTitleViewHeight: CGFloat = 40.0
 class RFHomeViewController: UIViewController {
     
     // MARK: - Property
-    fileprivate lazy var pageTitleView: PageTitleView = {
+    fileprivate lazy var pageTitleView: PageTitleView = {[weak self] in
         let titles = ["推荐","游戏","娱乐","趣玩"]
         let frame = CGRect(x: 0, y: TopBarHeight, width: ScreenWidth, height: kPageTitleViewHeight)
         let pageTitleView = PageTitleView(frame: frame, titles: titles)
+        pageTitleView.delegate = self
         return pageTitleView
     }()
     
-    fileprivate lazy var pageContentView: PageContentView = {
+    fileprivate lazy var pageContentView: PageContentView = {[weak self] in
         let pageContentViewY: CGFloat = TopBarHeight + kPageTitleViewHeight
         let pageContentViewHeight: CGFloat = ScreenHeight - pageContentViewY
         
@@ -92,5 +93,12 @@ extension RFHomeViewController {
         let qrcodeBarButtonItem = UIBarButtonItem(target: self, action: #selector(qrcodeBarButtonClicked), imageName: "Image_scan", highlightedImageName: "Image_scan_click", frame: frame)
         navigationItem.rightBarButtonItems = [historyBarButtonItem, searchBarButtonItem, qrcodeBarButtonItem]
         
+    }
+}
+
+// MARK: - PageTitleViewDelegate
+extension RFHomeViewController: PageTitleViewDelegate {
+    func pageTitleView(_ pageTitleView: PageTitleView, didSelectIndex index: Int) {
+        pageContentView.setCurrentIndex(index)
     }
 }
