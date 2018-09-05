@@ -8,12 +8,12 @@
 
 import UIKit
 
-fileprivate let kPageTitleViewHeight: CGFloat = 40.0
+private let kPageTitleViewHeight: CGFloat = 40.0
 
 class RFHomeViewController: UIViewController {
     
     // MARK: - Property
-    fileprivate lazy var pageTitleView: PageTitleView = {[weak self] in
+    private lazy var pageTitleView: PageTitleView = {[weak self] in
         let titles = ["推荐","游戏","娱乐","趣玩"]
         let frame = CGRect(x: 0, y: TopBarHeight, width: ScreenWidth, height: kPageTitleViewHeight)
         let pageTitleView = PageTitleView(frame: frame, titles: titles)
@@ -21,7 +21,7 @@ class RFHomeViewController: UIViewController {
         return pageTitleView
     }()
     
-    fileprivate lazy var pageContentView: PageContentView = {[weak self] in
+    private lazy var pageContentView: PageContentView = {[weak self] in
         let pageContentViewY: CGFloat = TopBarHeight + kPageTitleViewHeight
         let pageContentViewHeight: CGFloat = ScreenHeight - pageContentViewY
         
@@ -55,19 +55,19 @@ class RFHomeViewController: UIViewController {
     */
     
     // MARK: - Event
-    @objc fileprivate func leftBarButtonClicked() {
+    @objc private func leftBarButtonClicked() {
         
     }
     
-    @objc fileprivate func historyBarButtonClicked() {
+    @objc private func historyBarButtonClicked() {
         
     }
     
-    @objc fileprivate func searchBarButtonClicked() {
+    @objc private func searchBarButtonClicked() {
         
     }
     
-    @objc fileprivate func qrcodeBarButtonClicked() {
+    @objc private func qrcodeBarButtonClicked() {
         
     }
 
@@ -75,7 +75,7 @@ class RFHomeViewController: UIViewController {
 
 // MARK: - SetUI
 extension RFHomeViewController {
-    fileprivate func setUI() {
+    private func setUI() {
         setNavigationItem()
         
         automaticallyAdjustsScrollViewInsets = false

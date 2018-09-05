@@ -8,8 +8,8 @@
 
 import UIKit
 
-fileprivate let kScrollBarHeight: CGFloat = 2.0
-fileprivate let kLineViewHeight: CGFloat = 0.5
+private let kScrollBarHeight: CGFloat = 2.0
+private let kLineViewHeight: CGFloat = 0.5
 
 protocol PageTitleViewDelegate: class {
     func pageTitleView(_ pageTitleView: PageTitleView, didSelectIndex index: Int)
@@ -19,9 +19,9 @@ class PageTitleView: UIView {
     
     weak var delegate: PageTitleViewDelegate?
     
-    fileprivate var titles: [String]
+    private var titles: [String]
     
-    fileprivate lazy var scrollView: UIScrollView = {
+    private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = UIColor.clear
         scrollView.showsVerticalScrollIndicator = false
@@ -34,9 +34,9 @@ class PageTitleView: UIView {
         return scrollView
     }()
     
-    fileprivate lazy var scrollBar: UIView = UIView()
+    private lazy var scrollBar: UIView = UIView()
     
-    fileprivate lazy var titleButtons: [UIButton] = [UIButton]()
+    private lazy var titleButtons: [UIButton] = [UIButton]()
     
     private var currentIndex: Int = 0
 
@@ -52,7 +52,7 @@ class PageTitleView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc fileprivate func titleButtonClicked(titleButton: UIButton) {
+    @objc private func titleButtonClicked(titleButton: UIButton) {
         let oldTitleButton = titleButtons[currentIndex]
         oldTitleButton.isSelected = false
         titleButton.isSelected = true
@@ -70,7 +70,7 @@ class PageTitleView: UIView {
 
 // MARK: - SetUI
 extension PageTitleView {
-    fileprivate func setUI() {
+    private func setUI() {
         backgroundColor = UIColor.white
         
         addSubview(scrollView)

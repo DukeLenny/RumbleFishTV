@@ -8,12 +8,14 @@
 
 import UIKit
 
-fileprivate let kCollectionViewCellReuseIdentifier = "UICollectionViewCell"
+private let kCollectionViewCellReuseIdentifier = "UICollectionViewCell"
 
 class PageContentView: UIView {
 
-    fileprivate weak var parentViewController: UIViewController?
-    fileprivate var childViewControllers: [UIViewController]
+    private weak var parentViewController: UIViewController?
+    private var childViewControllers: [UIViewController]
+    
+    private var currentContentOffsetX: CGFloat = 0.0
     
     private lazy var collectionView: UICollectionView = {[weak self] in 
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -49,7 +51,11 @@ class PageContentView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private var isSetContentOffset: Bool = false
+    
     func setCurrentIndex(_ index: Int) {
+        isSetContentOffset = true
+        
         collectionView.setContentOffset(CGPoint(x: CGFloat(index) * collectionView.bounds.width, y: 0.0), animated: false)
     }
     
@@ -57,7 +63,7 @@ class PageContentView: UIView {
 
 // MARK: - SetUI
 extension PageContentView {
-    fileprivate func setUI() {
+    private func setUI() {
         backgroundColor = UIColor.clear
         
         for childViewController in childViewControllers {
@@ -89,5 +95,48 @@ extension PageContentView: UICollectionViewDelegate, UICollectionViewDataSource 
         cell.contentView.addSubview(childViewController.view)
         
         return cell
+    }
+}
+
+extension PageContentView: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        currentContentOffsetX = scrollView.contentOffset.x
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if isSetContentOffset {
+            isSetContentOffset = false
+            return
+        }
+        
+        var progress: CGFloat = 0.0
+        var sourceIndex: Int = 0
+        var targetIndex: Int = 0
+        
+        let scrollViewContentOffsetX = scrollView.contentOffset.x
+        let scrollViewWidth = scrollView.bounds.width
+        let ratio = scrollViewContentOffsetX / scrollViewWidth
+        if scrollViewContentOffsetX > currentContentOffsetX {
+            // 左滑
+            progress = ratio - floor(ratio)
+            sourceIndex = Int(ratio)
+            targetIndex = sourceIndex + 1
+            if scrollViewContentOffsetX - currentContentOffsetX == scrollViewWidth {
+                progress = 1.0
+                targetIndex = sourceIndex
+                sourceIndex = sourceIndex - 1
+            }
+        } else if scrollViewContentOffsetX == currentContentOffsetX {
+            progress = 0.0
+            sourceIndex = Int(ratio)
+            targetIndex = sourceIndex
+        } else {
+            // 右滑
+            progress = 1 - (ratio - floor(ratio))
+            targetIndex = Int(ratio)
+            sourceIndex = targetIndex + 1
+        }
+        
+//        print("progress = \(progress), sourceIndex = \(sourceIndex), targetIndex = \(targetIndex)")
     }
 }
