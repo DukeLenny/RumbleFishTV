@@ -67,6 +67,12 @@ class PageTitleView: UIView {
     }
     
     func setTitle(progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        let sourceTitleButton = titleButtons[sourceIndex]
+        let targetTitleButton = titleButtons[targetIndex]
+        
+        // 滚动条frame改变
+        let moveX = (targetTitleButton.frame.origin.x - sourceTitleButton.frame.origin.x) * progress
+        scrollBar.frame.origin.x = sourceTitleButton.frame.origin.x + moveX
         
     }
     
