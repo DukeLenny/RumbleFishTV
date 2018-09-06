@@ -10,7 +10,13 @@ import UIKit
 
 private let kCollectionViewCellReuseIdentifier = "UICollectionViewCell"
 
+protocol PageContentViewDelegate: class {
+    func pageContentView(_ pageContentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int)
+}
+
 class PageContentView: UIView {
+    
+    weak var delegate: PageContentViewDelegate?
 
     private weak var parentViewController: UIViewController?
     private var childViewControllers: [UIViewController]
@@ -138,5 +144,6 @@ extension PageContentView: UIScrollViewDelegate {
         }
         
 //        print("progress = \(progress), sourceIndex = \(sourceIndex), targetIndex = \(targetIndex)")
+        delegate?.pageContentView(self, progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
     }
 }

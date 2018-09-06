@@ -66,6 +66,10 @@ class PageTitleView: UIView {
         delegate?.pageTitleView(self, didSelectIndex: titleButton.tag)
     }
     
+    func setTitle(progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        
+    }
+    
 }
 
 // MARK: - SetUI

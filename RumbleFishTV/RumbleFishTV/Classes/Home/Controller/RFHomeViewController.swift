@@ -33,6 +33,7 @@ class RFHomeViewController: UIViewController {
         }
         
         let pageContentView = PageContentView(frame: CGRect(x: 0.0, y: pageContentViewY, width: ScreenWidth, height: pageContentViewHeight), parentViewController: self, childViewControllers: childViewControllers)
+        pageContentView.delegate = self
         return pageContentView
     }()
     
@@ -100,5 +101,12 @@ extension RFHomeViewController {
 extension RFHomeViewController: PageTitleViewDelegate {
     func pageTitleView(_ pageTitleView: PageTitleView, didSelectIndex index: Int) {
         pageContentView.setCurrentIndex(index)
+    }
+}
+
+// MARK: - PageContentViewDelegate
+extension RFHomeViewController: PageContentViewDelegate {
+    func pageContentView(_ pageContentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        pageTitleView.setTitle(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
     }
 }
