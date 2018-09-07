@@ -106,12 +106,13 @@ extension PageContentView: UICollectionViewDelegate, UICollectionViewDataSource 
 
 extension PageContentView: UIScrollViewDelegate {
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        isSetContentOffset = false
+        
         currentContentOffsetX = scrollView.contentOffset.x
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if isSetContentOffset {
-            isSetContentOffset = false
             return
         }
         
@@ -127,6 +128,9 @@ extension PageContentView: UIScrollViewDelegate {
             progress = ratio - floor(ratio)
             sourceIndex = Int(ratio)
             targetIndex = sourceIndex + 1
+            if targetIndex >= childViewControllers.count {
+                targetIndex = childViewControllers.count - 1
+            }
             if scrollViewContentOffsetX - currentContentOffsetX == scrollViewWidth {
                 progress = 1.0
                 targetIndex = sourceIndex
@@ -141,6 +145,9 @@ extension PageContentView: UIScrollViewDelegate {
             progress = 1 - (ratio - floor(ratio))
             targetIndex = Int(ratio)
             sourceIndex = targetIndex + 1
+            if sourceIndex >= childViewControllers.count {
+                sourceIndex = childViewControllers.count - 1
+            }
         }
         
 //        print("progress = \(progress), sourceIndex = \(sourceIndex), targetIndex = \(targetIndex)")

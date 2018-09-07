@@ -9,19 +9,15 @@
 import UIKit
 
 extension UIColor {
-    static func rgba(_ red: UInt8, _ green: UInt8, _ blue: UInt8, _ alpha: CGFloat) -> UIColor {
-        return UIColor(red: CGFloat(red)/255.0, green: CGFloat(green)/255.0, blue: CGFloat(blue)/255.0, alpha: alpha)
+    static func rgb(_ red: CGFloat, _ green: CGFloat, _ blue: CGFloat, alpha: CGFloat = 1.0) -> UIColor {
+        return UIColor(red: red / 255.0, green: green / 255.0, blue: blue / 255.0, alpha: alpha)
     }
     
-    static func rgb(_ red: UInt8, _ green: UInt8, _ blue: UInt8) -> UIColor {
-        return rgba(red, green, blue, 1.0)
+    static func random(alpha: CGFloat = 1.0) -> UIColor {
+        return rgb(CGFloat(arc4random_uniform(256)), CGFloat(arc4random_uniform(256)), CGFloat(arc4random_uniform(256)), alpha: alpha)
     }
     
-    static func random(_ alpha: CGFloat = 1) -> UIColor {
-        return rgba(UInt8(arc4random() % 256), UInt8(arc4random() % 256), UInt8(arc4random() % 256), alpha)
-    }
-    
-    static func hex(_ hex: Int, alpha: CGFloat = 1) -> UIColor {
-        return UIColor(red: CGFloat((hex & 0xFF0000) >> 16) / 255.0, green: CGFloat((hex & 0x00FF00) >> 8) / 255.0, blue: CGFloat(hex & 0x0000FF) / 255.0, alpha: alpha)
+    static func hex(_ hex: Int, alpha: CGFloat = 1.0) -> UIColor {
+        return UIColor.rgb(CGFloat((hex & 0xFF0000) >> 16), CGFloat((hex & 0x00FF00) >> 8), CGFloat(hex & 0x0000FF), alpha: alpha)
     }
 }

@@ -11,6 +11,11 @@ import UIKit
 private let kScrollBarHeight: CGFloat = 2.0
 private let kLineViewHeight: CGFloat = 0.5
 
+// 1.0, 0.5, 0.0 RGB,orange
+private let kSelectedColorValue: (CGFloat, CGFloat, CGFloat) = (255.0, 128.0, 0.0)
+// 0.333 white,darkGray
+private let kNormalColorValue: (CGFloat, CGFloat, CGFloat) = (85.0, 85.0, 85.0)
+
 protocol PageTitleViewDelegate: class {
     func pageTitleView(_ pageTitleView: PageTitleView, didSelectIndex index: Int)
 }
@@ -54,8 +59,8 @@ class PageTitleView: UIView {
     
     @objc private func titleButtonClicked(titleButton: UIButton) {
         let oldTitleButton = titleButtons[currentIndex]
-        oldTitleButton.isSelected = false
-        titleButton.isSelected = true
+        oldTitleButton.setTitleColor(UIColor.rgb(kNormalColorValue.0, kNormalColorValue.1, kNormalColorValue.2), for: .normal)
+        titleButton.setTitleColor(UIColor.rgb(kSelectedColorValue.0, kSelectedColorValue.1, kSelectedColorValue.2), for: .normal)
         
         currentIndex = titleButton.tag
         
@@ -67,6 +72,8 @@ class PageTitleView: UIView {
     }
     
     func setTitle(progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        currentIndex = targetIndex
+        
         let sourceTitleButton = titleButtons[sourceIndex]
         let targetTitleButton = titleButtons[targetIndex]
         
@@ -74,6 +81,20 @@ class PageTitleView: UIView {
         let moveX = (targetTitleButton.frame.origin.x - sourceTitleButton.frame.origin.x) * progress
         scrollBar.frame.origin.x = sourceTitleButton.frame.origin.x + moveX
         
+        // 标题颜色渐变
+        if progress == 0.0 {
+            for titleButton in titleButtons {
+                if titleButton == sourceTitleButton {
+                    titleButton.setTitleColor(UIColor.rgb(kSelectedColorValue.0, kSelectedColorValue.1, kSelectedColorValue.2), for: .normal)
+                } else {
+                    titleButton.setTitleColor(UIColor.rgb(kNormalColorValue.0, kNormalColorValue.1, kNormalColorValue.2), for: .normal)
+                }
+            }
+        } else {
+            let deltaColorValue = (kSelectedColorValue.0 - kNormalColorValue.0, kSelectedColorValue.1 - kNormalColorValue.1, kSelectedColorValue.2 - kNormalColorValue.2)
+            sourceTitleButton.setTitleColor(UIColor.rgb(kSelectedColorValue.0 - deltaColorValue.0 * progress, kSelectedColorValue.1 - deltaColorValue.1 * progress, kSelectedColorValue.2 - deltaColorValue.2 * progress), for: .normal)
+            targetTitleButton.setTitleColor(UIColor.rgb(kNormalColorValue.0 + deltaColorValue.0 * progress, kNormalColorValue.1 + deltaColorValue.1 * progress, kNormalColorValue.2 + deltaColorValue.2 * progress), for: .normal)
+        }
     }
     
 }
@@ -97,7 +118,9 @@ extension PageTitleView {
         let titleButtonHeight: CGFloat = scrollView.bounds.height - kScrollBarHeight
         
         for (index, title) in titles.enumerated() {
-            let titleButton: UIButton = UIButton(title: title, titleColor: UIColor.darkGray, font: UIFont.systemFont(ofSize: 16.0), selectedTitleColor: UIColor.orange, target: self, action: #selector(titleButtonClicked(titleButton:)))
+            // titleColor: UIColor.rgb(kNormalColorValue.0, kNormalColorValue.1, kNormalColorValue.2)
+            // selectedTitleColor: UIColor.rgb(kSelectedColorValue.0, kSelectedColorValue.1, kSelectedColorValue.2)
+            let titleButton: UIButton = UIButton(title: title, titleColor: UIColor.rgb(kNormalColorValue.0, kNormalColorValue.1, kNormalColorValue.2), font: UIFont.systemFont(ofSize: 16.0), target: self, action: #selector(titleButtonClicked(titleButton:)))
             titleButton.tag = index
             let titleButtonX: CGFloat = CGFloat(index) * titleButtonWidth
             titleButton.frame = CGRect(x: titleButtonX, y: titleButtonY, width: titleButtonWidth, height: titleButtonHeight)
@@ -105,7 +128,7 @@ extension PageTitleView {
             titleButtons.append(titleButton)
             
             if index == 0 {
-                titleButton.isSelected = true
+                titleButton.setTitleColor(UIColor.rgb(kSelectedColorValue.0, kSelectedColorValue.1, kSelectedColorValue.2), for: .normal)
             }
         }
     }
