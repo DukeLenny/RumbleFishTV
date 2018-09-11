@@ -23,10 +23,12 @@ class RFHomeViewController: UIViewController {
     
     private lazy var pageContentView: PageContentView = {[weak self] in
         let pageContentViewY: CGFloat = TopBarHeight + kPageTitleViewHeight
-        let pageContentViewHeight: CGFloat = ScreenHeight - pageContentViewY
+        let pageContentViewHeight: CGFloat = ScreenHeight - pageContentViewY - BottomBarHeight
         
         var childViewControllers = [UIViewController]()
-        for _ in 0..<4 {
+        let recommendViewController = RFRecommendViewController()
+        childViewControllers.append(recommendViewController)
+        for _ in 0..<3 {
             let childViewController = UIViewController()
             childViewController.view.backgroundColor = UIColor.random()
             childViewControllers.append(childViewController)
