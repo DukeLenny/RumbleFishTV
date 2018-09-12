@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F73D6CC92148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D6CC72148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.swift */; };
+		F73D6CCA2148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73D6CC82148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.xib */; };
 		F73E0ACC21369BF500DD2960 /* RFHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E0ACB21369BF500DD2960 /* RFHomeViewController.swift */; };
 		F73E0AD82136A05300DD2960 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E0ACE2136A05200DD2960 /* Bundle+Extension.swift */; };
 		F73E0ADA2136A05300DD2960 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E0AD02136A05200DD2960 /* UIBarButtonItem+Extension.swift */; };
@@ -51,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F73D6CC72148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFRecommendCollectionSectionHeaderView.swift; sourceTree = "<group>"; };
+		F73D6CC82148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RFRecommendCollectionSectionHeaderView.xib; sourceTree = "<group>"; };
 		F73E0ACB21369BF500DD2960 /* RFHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFHomeViewController.swift; sourceTree = "<group>"; };
 		F73E0ACE2136A05200DD2960 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		F73E0AD02136A05200DD2960 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 		F74A86FC212EC655001A858F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F73D6CC72148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.swift */,
+				F73D6CC82148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -407,6 +413,7 @@
 				F74A86F9212EC4CD001A858F /* Follow.storyboard in Resources */,
 				F74A86F5212EC22D001A858F /* Home.storyboard in Resources */,
 				F74EBC9F212D44A100FE351B /* Assets.xcassets in Resources */,
+				F73D6CCA2148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.xib in Resources */,
 				F74A86F7212EC42B001A858F /* Live.storyboard in Resources */,
 				F74EBC9D212D449C00FE351B /* Main.storyboard in Resources */,
 			);
@@ -445,6 +452,7 @@
 				F74EBCCF212D647100FE351B /* RFNavigationController.swift in Sources */,
 				F73E0ADB2136A05300DD2960 /* UIButton+Extension.swift in Sources */,
 				F750E96D2147BBE000B0F7C1 /* RFRecommendViewController.swift in Sources */,
+				F73D6CC92148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.swift in Sources */,
 				F73E0ADE2136A05300DD2960 /* Constant.swift in Sources */,
 				F73E0AE02136A05300DD2960 /* URLString.swift in Sources */,
 				F766102821392DFF00F2981F /* UIDevice+Extension.swift in Sources */,

@@ -21,7 +21,7 @@ private let kCollectionSectionHeaderViewId = "RFRecommendCollectionSectionHeader
 
 class RFRecommendViewController: UIViewController {
     
-    private lazy var sectionHeaderTitles: [String] = ["推荐","颜值","穿越火线","一起看","二次元","户外","科普","美食","LOL","绝地求生","王者荣耀","炉石传说"]
+    private lazy var sectionHeaderTitles: [String] = ["热门","颜值","穿越火线","一起看","二次元","户外","科普","美食","LOL","绝地求生","王者荣耀","炉石传说"]
     
     private lazy var collectionView: UICollectionView = {[unowned self] in
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -41,7 +41,8 @@ class RFRecommendViewController: UIViewController {
 //        collectionView.bounces = false
 //        collectionView.isPagingEnabled = true
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kCollectionViewCellId)
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kCollectionSectionHeaderViewId)
+//        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kCollectionSectionHeaderViewId)
+        collectionView.register(UINib(nibName: "RFRecommendCollectionSectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kCollectionSectionHeaderViewId)
         setAutomaticallyAdjustsScrollViewInsetsFalse(scrollView: collectionView, vc: self)
         return collectionView
         }()
@@ -74,7 +75,7 @@ extension RFRecommendViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            // 推荐
+            // 热门
             return 8
         }
         return 4
@@ -90,8 +91,8 @@ extension RFRecommendViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let supplementaryView: UICollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kCollectionSectionHeaderViewId, for: indexPath)
-        supplementaryView.backgroundColor = UIColor.green
+        let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kCollectionSectionHeaderViewId, for: indexPath)
+//        supplementaryView.backgroundColor = UIColor.green
         return supplementaryView
     }
 }
