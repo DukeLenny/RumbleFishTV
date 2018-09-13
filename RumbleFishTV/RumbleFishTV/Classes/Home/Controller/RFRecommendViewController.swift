@@ -15,9 +15,11 @@ private let kItemWidth: CGFloat = (ScreenWidth - 2 * kItemMargin - (kItemColumnC
 private let kItemHeight: CGFloat = kItemWidth * 3 / 4
 
 private let kHeaderHeight: CGFloat = 50.0
+private let kPrettyItemHeight: CGFloat = kItemWidth * 4 / 3
 
-private let kCollectionViewCellId = "RFRecommendCollectionViewCell"
+private let kCollectionViewCellId = "RFNormalCollectionViewCell"
 private let kCollectionSectionHeaderViewId = "RFRecommendCollectionSectionHeaderView"
+private let kPrettyCollectionViewCellId = "RFHighCollectionViewCell"
 
 class RFRecommendViewController: UIViewController {
     
@@ -40,7 +42,9 @@ class RFRecommendViewController: UIViewController {
         collectionView.showsHorizontalScrollIndicator = false
 //        collectionView.bounces = false
 //        collectionView.isPagingEnabled = true
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kCollectionViewCellId)
+//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kCollectionViewCellId)
+        collectionView.register(UINib(nibName: "RFNormalCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kCollectionViewCellId)
+        collectionView.register(UINib(nibName: "RFHighCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kPrettyCollectionViewCellId)
 //        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kCollectionSectionHeaderViewId)
         collectionView.register(UINib(nibName: "RFRecommendCollectionSectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kCollectionSectionHeaderViewId)
         setAutomaticallyAdjustsScrollViewInsetsFalse(scrollView: collectionView, vc: self)
@@ -68,7 +72,7 @@ extension RFRecommendViewController {
     
 }
 
-extension RFRecommendViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension RFRecommendViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sectionHeaderTitles.count
     }
@@ -82,17 +86,32 @@ extension RFRecommendViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: kCollectionViewCellId, for: indexPath)
-        cell.contentView.backgroundColor = UIColor.yellow
-        
-        
-        
-        return cell
+        if indexPath.section == 1 {
+            // 颜值
+            let cell: RFHighCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCollectionViewCellId, for: indexPath) as! RFHighCollectionViewCell
+            cell.contentView.backgroundColor = UIColor.white
+            
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCollectionViewCellId, for: indexPath)
+            cell.contentView.backgroundColor = UIColor.white
+            
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kCollectionSectionHeaderViewId, for: indexPath)
 //        supplementaryView.backgroundColor = UIColor.green
         return supplementaryView
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 1 {
+            // 颜值
+            return CGSize(width: kItemWidth, height: kPrettyItemHeight)
+        } else {
+            return CGSize(width: kItemWidth, height: kItemHeight)
+        }
     }
 }
