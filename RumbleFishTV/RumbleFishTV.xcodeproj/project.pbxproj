@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58CA9C43354AD20C1E7E8ADC /* Pods_RumbleFishTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1470680761FE0294A9EEA0 /* Pods_RumbleFishTV.framework */; };
 		F71F5574214A533600C7E06E /* RFHighCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71F5572214A533600C7E06E /* RFHighCollectionViewCell.swift */; };
 		F71F5575214A533600C7E06E /* RFHighCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F71F5573214A533600C7E06E /* RFHighCollectionViewCell.xib */; };
 		F73D6CC92148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D6CC72148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.swift */; };
@@ -37,6 +38,7 @@
 		F754F73D2149FF66001B55D8 /* RFNormalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F754F73B2149FF66001B55D8 /* RFNormalCollectionViewCell.xib */; };
 		F76610262139273900F2981F /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76610252139273900F2981F /* PageContentView.swift */; };
 		F766102821392DFF00F2981F /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766102721392DFF00F2981F /* UIDevice+Extension.swift */; };
+		F7E532FB214B60970071A919 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E532FA214B60970071A919 /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D1470680761FE0294A9EEA0 /* Pods_RumbleFishTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RumbleFishTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF5D25519FE17B9ABF6EFB8C /* Pods-RumbleFishTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumbleFishTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-RumbleFishTV/Pods-RumbleFishTV.release.xcconfig"; sourceTree = "<group>"; };
+		EF2A16B29FFC8C1FB9B44ADA /* Pods-RumbleFishTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumbleFishTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RumbleFishTV/Pods-RumbleFishTV.debug.xcconfig"; sourceTree = "<group>"; };
 		F71F5572214A533600C7E06E /* RFHighCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFHighCollectionViewCell.swift; sourceTree = "<group>"; };
 		F71F5573214A533600C7E06E /* RFHighCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RFHighCollectionViewCell.xib; sourceTree = "<group>"; };
 		F73D6CC72148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFRecommendCollectionSectionHeaderView.swift; sourceTree = "<group>"; };
@@ -93,6 +98,7 @@
 		F754F73B2149FF66001B55D8 /* RFNormalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RFNormalCollectionViewCell.xib; sourceTree = "<group>"; };
 		F76610252139273900F2981F /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		F766102721392DFF00F2981F /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		F7E532FA214B60970071A919 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58CA9C43354AD20C1E7E8ADC /* Pods_RumbleFishTV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +127,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A185203B1945360F8A08A14 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF2A16B29FFC8C1FB9B44ADA /* Pods-RumbleFishTV.debug.xcconfig */,
+				DF5D25519FE17B9ABF6EFB8C /* Pods-RumbleFishTV.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E088095495470DFCE28A7D15 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D1470680761FE0294A9EEA0 /* Pods_RumbleFishTV.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F73E0ACD2136A05200DD2960 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +203,8 @@
 				F74EBCAB212D44A100FE351B /* RumbleFishTVTests */,
 				F74EBCB6212D44A100FE351B /* RumbleFishTVUITests */,
 				F74EBC95212D449C00FE351B /* Products */,
+				2A185203B1945360F8A08A14 /* Pods */,
+				E088095495470DFCE28A7D15 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -283,6 +309,7 @@
 		F74EBCCB212D585300FE351B /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				F7E532F9214B5FE00071A919 /* Network */,
 				F73E0ACD2136A05200DD2960 /* Extension */,
 				F73E0AD42136A05300DD2960 /* Other */,
 			);
@@ -316,6 +343,14 @@
 			path = RumbleFishTV/Classes/Main/Model;
 			sourceTree = SOURCE_ROOT;
 		};
+		F7E532F9214B5FE00071A919 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F7E532FA214B60970071A919 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -323,9 +358,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F74EBCBC212D44A100FE351B /* Build configuration list for PBXNativeTarget "RumbleFishTV" */;
 			buildPhases = (
+				0F87CCD2F8B12A210F274E64 /* [CP] Check Pods Manifest.lock */,
 				F74EBC90212D449C00FE351B /* Sources */,
 				F74EBC91212D449C00FE351B /* Frameworks */,
 				F74EBC92212D449C00FE351B /* Resources */,
+				1F77C02E4DB5D177C3879CA2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -449,6 +486,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F87CCD2F8B12A210F274E64 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RumbleFishTV-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1F77C02E4DB5D177C3879CA2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RumbleFishTV/Pods-RumbleFishTV-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RumbleFishTV/Pods-RumbleFishTV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F74EBC90212D449C00FE351B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -464,6 +540,7 @@
 				F73E0ADC2136A05300DD2960 /* UIColor+Extension.swift in Sources */,
 				F73E0ADA2136A05300DD2960 /* UIBarButtonItem+Extension.swift in Sources */,
 				F74EBCCF212D647100FE351B /* RFNavigationController.swift in Sources */,
+				F7E532FB214B60970071A919 /* Network.swift in Sources */,
 				F73E0ADB2136A05300DD2960 /* UIButton+Extension.swift in Sources */,
 				F750E96D2147BBE000B0F7C1 /* RFRecommendViewController.swift in Sources */,
 				F754F73C2149FF66001B55D8 /* RFNormalCollectionViewCell.swift in Sources */,
@@ -635,6 +712,7 @@
 		};
 		F74EBCBD212D44A100FE351B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF2A16B29FFC8C1FB9B44ADA /* Pods-RumbleFishTV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -655,6 +733,7 @@
 		};
 		F74EBCBE212D44A100FE351B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF5D25519FE17B9ABF6EFB8C /* Pods-RumbleFishTV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
