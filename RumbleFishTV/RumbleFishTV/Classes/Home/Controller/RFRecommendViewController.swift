@@ -25,6 +25,8 @@ class RFRecommendViewController: UIViewController {
     
     private lazy var sectionHeaderTitles: [String] = ["热门","颜值","穿越火线","一起看","二次元","户外","科普","美食","LOL","绝地求生","王者荣耀","炉石传说"]
     
+    private lazy var recommendViewModel: RFRecommendViewModel = RFRecommendViewModel()
+    
     private lazy var collectionView: UICollectionView = {[unowned self] in
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
         collectionViewFlowLayout.minimumLineSpacing = 0.0
@@ -57,6 +59,8 @@ class RFRecommendViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         setUI()
+        
+        requestData()
     }
 
 }
@@ -70,6 +74,13 @@ extension RFRecommendViewController {
     }
     
     
+}
+
+// MARK: - 请求数据
+extension RFRecommendViewController {
+    private func requestData() {
+        recommendViewModel.requestData()
+    }
 }
 
 extension RFRecommendViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

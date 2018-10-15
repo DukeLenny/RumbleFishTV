@@ -8,4 +8,8 @@
 
 import Foundation
 
-let RootURLString = ""
+let BaseURLString = "http://capi.douyucdn.cn/api/v1/"
+
+// MARK: - 首页推荐
+// 2-12区游戏
+let GetHotCateURL = BaseURLString + "getHotCate"
