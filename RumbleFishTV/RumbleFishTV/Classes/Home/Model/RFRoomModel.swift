@@ -17,6 +17,8 @@ class RFRoomModel: NSObject {
     @objc var nickname: String = ""
     @objc var online: Int = 0
     
+    @objc var anchor_city: String = ""
+    
     init(dic: [String : NSObject]) {
         super.init()
         

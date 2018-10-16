@@ -23,7 +23,7 @@ private let kPrettyCollectionViewCellId = "RFHighCollectionViewCell"
 
 class RFRecommendViewController: UIViewController {
     
-    private lazy var sectionHeaderTitles: [String] = ["热门","颜值","穿越火线","一起看","二次元","户外","科普","美食","LOL","绝地求生","王者荣耀","炉石传说"]
+//    private lazy var sectionHeaderTitles: [String] = ["热门","颜值","穿越火线","一起看","二次元","户外","科普","美食","LOL","绝地求生","王者荣耀","炉石传说"]
     
     private lazy var recommendViewModel: RFRecommendViewModel = RFRecommendViewModel()
     
@@ -79,21 +79,20 @@ extension RFRecommendViewController {
 // MARK: - 请求数据
 extension RFRecommendViewController {
     private func requestData() {
-        recommendViewModel.requestData()
+        recommendViewModel.requestData {
+            self.collectionView.reloadData()
+        }
     }
 }
 
 extension RFRecommendViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return sectionHeaderTitles.count
+        return recommendViewModel.anchorModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            // 热门
-            return 8
-        }
-        return 4
+        let anchorModel = recommendViewModel.anchorModels[section]
+        return anchorModel.roomModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -112,8 +111,10 @@ extension RFRecommendViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kCollectionSectionHeaderViewId, for: indexPath)
+        let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kCollectionSectionHeaderViewId, for: indexPath) as! RFRecommendCollectionSectionHeaderView
 //        supplementaryView.backgroundColor = UIColor.green
+        let anchorModel = recommendViewModel.anchorModels[indexPath.section]
+        supplementaryView.anchorModel = anchorModel
         return supplementaryView
     }
     

@@ -12,6 +12,9 @@ class RFAnchorModel: NSObject {
     @objc private var room_list: [[String : NSObject]]? {
         didSet {
             if let room_list = room_list {
+                if !roomModels.isEmpty {
+                    roomModels.removeAll()
+                }
                 for room in room_list {
                     let roomModel = RFRoomModel(dic: room)
                     roomModels.append(roomModel)
@@ -24,6 +27,10 @@ class RFAnchorModel: NSObject {
     
     lazy var roomModels: [RFRoomModel] = [RFRoomModel]()
     
+    override init() {
+        
+    }
+    
     init(dic: [String : NSObject]) {
         super.init()
         
@@ -35,6 +42,9 @@ class RFAnchorModel: NSObject {
 //    override func setValue(_ value: Any?, forKey key: String) {
 //        if key == "room_list" {
 //            if let value = value as? [[String : NSObject]] {
+//                if !roomModels.isEmpty {
+//                    roomModels.removeAll()
+//                }
 //                for dic in value {
 //                    let roomModel = RFRoomModel(dic: dic)
 //                    roomModels.append(roomModel)

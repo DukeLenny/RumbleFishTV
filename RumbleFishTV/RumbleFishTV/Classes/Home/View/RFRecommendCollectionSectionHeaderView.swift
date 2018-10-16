@@ -26,6 +26,13 @@ class RFRecommendCollectionSectionHeaderView: UICollectionReusableView {
     @IBOutlet private weak var textLabel: UILabel!
     @IBOutlet private weak var moreButton: UIButton!
     
+    var anchorModel: RFAnchorModel? {
+        didSet {
+            imageView.image = UIImage(named: anchorModel?.icon_name ?? "home_header_normal")
+            textLabel.text = anchorModel?.tag_name
+        }
+    }
+    
     override class var layerClass: Swift.AnyClass {
         get {
             if #available(iOS 11.0, *) {
