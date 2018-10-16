@@ -10,14 +10,17 @@ import UIKit
 
 class RFHighCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet private weak var addressButton: UIButton!
-    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var cityButton: UIButton!
+    @IBOutlet private weak var nicknameLabel: UILabel!
     @IBOutlet private weak var coverImageView: UIImageView!
-    @IBOutlet private weak var onlineLabel: UILabel!
+//    @IBOutlet private weak var onlineLabel: UILabel!
+    @IBOutlet private weak var onlineButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+//    var room
 
 }

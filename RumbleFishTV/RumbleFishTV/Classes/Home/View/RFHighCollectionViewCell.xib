@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,7 +29,7 @@
                             <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         </state>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ol8-zS-jAh">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ol8-zS-jAh">
                         <rect key="frame" x="0.0" y="242" width="27" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="eLL-C9-CXc"/>
@@ -47,7 +47,7 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0人在线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9p-5a-4Au">
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0人在线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9p-5a-4Au">
                         <rect key="frame" x="197" y="5" width="51" height="24"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -64,6 +64,22 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </label>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRU-VL-0TF">
+                        <rect key="frame" x="187" y="5" width="61" height="24"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="8t4-9h-J57"/>
+                            <constraint firstAttribute="width" constant="61" id="Wh5-cG-RnA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="0在线"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </button>
                 </subviews>
             </view>
             <constraints>
@@ -72,19 +88,21 @@
                 <constraint firstAttribute="trailing" secondItem="R9p-5a-4Au" secondAttribute="trailing" constant="5" id="XJF-iB-k6c"/>
                 <constraint firstAttribute="bottom" secondItem="OvY-Rp-p5q" secondAttribute="bottom" constant="10" id="Z2r-ob-uLs"/>
                 <constraint firstItem="uYI-kJ-6mF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="dJ9-ak-AAY"/>
+                <constraint firstAttribute="trailing" secondItem="DRU-VL-0TF" secondAttribute="trailing" constant="5" id="gbR-ds-pJ8"/>
                 <constraint firstItem="OvY-Rp-p5q" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="o78-vd-nrQ"/>
                 <constraint firstAttribute="trailing" secondItem="uYI-kJ-6mF" secondAttribute="trailing" id="q4D-vQ-VFT"/>
                 <constraint firstItem="ol8-zS-jAh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="r0N-FQ-Jwh"/>
                 <constraint firstItem="R9p-5a-4Au" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="sDz-aZ-76n"/>
                 <constraint firstItem="ol8-zS-jAh" firstAttribute="top" secondItem="uYI-kJ-6mF" secondAttribute="bottom" constant="5" id="vaS-of-gDy"/>
+                <constraint firstItem="DRU-VL-0TF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="yDe-yf-hHl"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="253" height="287"/>
             <connections>
-                <outlet property="addressButton" destination="OvY-Rp-p5q" id="RcT-S4-jTR"/>
+                <outlet property="cityButton" destination="OvY-Rp-p5q" id="Vbc-9q-R56"/>
                 <outlet property="coverImageView" destination="uYI-kJ-6mF" id="YR3-mo-7Dz"/>
-                <outlet property="onlineLabel" destination="R9p-5a-4Au" id="SRV-8E-BtZ"/>
-                <outlet property="titleLabel" destination="ol8-zS-jAh" id="XgA-H0-6LG"/>
+                <outlet property="nicknameLabel" destination="ol8-zS-jAh" id="UAA-Ao-Ute"/>
+                <outlet property="onlineButton" destination="DRU-VL-0TF" id="SGg-s4-rab"/>
             </connections>
             <point key="canvasLocation" x="-32.5" y="-53.5"/>
         </collectionViewCell>

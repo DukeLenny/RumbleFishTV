@@ -58,6 +58,10 @@ class PageTitleView: UIView {
     }
     
     @objc private func titleButtonClicked(titleButton: UIButton) {
+        if titleButton.tag == currentIndex {
+            return;
+        }
+        
         let oldTitleButton = titleButtons[currentIndex]
         oldTitleButton.setTitleColor(UIColor.rgb(kNormalColorValue.0, kNormalColorValue.1, kNormalColorValue.2), for: .normal)
         titleButton.setTitleColor(UIColor.rgb(kSelectedColorValue.0, kSelectedColorValue.1, kSelectedColorValue.2), for: .normal)
