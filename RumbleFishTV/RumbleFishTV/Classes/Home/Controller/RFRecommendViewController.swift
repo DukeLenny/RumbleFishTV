@@ -96,18 +96,18 @@ extension RFRecommendViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let anchorModel = recommendViewModel.anchorModels[indexPath.section]
+        let roomModel = anchorModel.roomModels[indexPath.item]
+        var cell: RFBaseCollectionViewCell!
         if indexPath.section == 1 {
             // 颜值
-            let cell: RFHighCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCollectionViewCellId, for: indexPath) as! RFHighCollectionViewCell
-            cell.contentView.backgroundColor = UIColor.white
-            
-            return cell
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCollectionViewCellId, for: indexPath) as! RFHighCollectionViewCell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCollectionViewCellId, for: indexPath)
-            cell.contentView.backgroundColor = UIColor.white
-            
-            return cell
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCollectionViewCellId, for: indexPath) as! RFNormalCollectionViewCell
         }
+        cell.contentView.backgroundColor = UIColor.white
+        cell.roomModel = roomModel
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

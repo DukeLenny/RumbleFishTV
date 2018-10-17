@@ -12,6 +12,7 @@
 		F7038A8521747F4A00333E88 /* RFRoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7038A8421747F4A00333E88 /* RFRoomModel.swift */; };
 		F71F5574214A533600C7E06E /* RFHighCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71F5572214A533600C7E06E /* RFHighCollectionViewCell.swift */; };
 		F71F5575214A533600C7E06E /* RFHighCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F71F5573214A533600C7E06E /* RFHighCollectionViewCell.xib */; };
+		F72B1E322176C79400C2A0C9 /* RFBaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72B1E312176C79400C2A0C9 /* RFBaseCollectionViewCell.swift */; };
 		F73D6CC92148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73D6CC72148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.swift */; };
 		F73D6CCA2148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73D6CC82148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.xib */; };
 		F73E0ACC21369BF500DD2960 /* RFHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E0ACB21369BF500DD2960 /* RFHomeViewController.swift */; };
@@ -70,6 +71,7 @@
 		F7038A8421747F4A00333E88 /* RFRoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFRoomModel.swift; sourceTree = "<group>"; };
 		F71F5572214A533600C7E06E /* RFHighCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFHighCollectionViewCell.swift; sourceTree = "<group>"; };
 		F71F5573214A533600C7E06E /* RFHighCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RFHighCollectionViewCell.xib; sourceTree = "<group>"; };
+		F72B1E312176C79400C2A0C9 /* RFBaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFBaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		F73D6CC72148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFRecommendCollectionSectionHeaderView.swift; sourceTree = "<group>"; };
 		F73D6CC82148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RFRecommendCollectionSectionHeaderView.xib; sourceTree = "<group>"; };
 		F73E0ACB21369BF500DD2960 /* RFHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFHomeViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				F754F73B2149FF66001B55D8 /* RFNormalCollectionViewCell.xib */,
 				F71F5572214A533600C7E06E /* RFHighCollectionViewCell.swift */,
 				F71F5573214A533600C7E06E /* RFHighCollectionViewCell.xib */,
+				F72B1E312176C79400C2A0C9 /* RFBaseCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				F74FCE692137CD0B00AB28DD /* PageTitleView.swift in Sources */,
 				F73E0ADF2136A05300DD2960 /* Function.swift in Sources */,
 				F73E0ACC21369BF500DD2960 /* RFHomeViewController.swift in Sources */,
+				F72B1E322176C79400C2A0C9 /* RFBaseCollectionViewCell.swift in Sources */,
 				F75EE7A921742AF100A3FFBB /* RFRecommendViewModel.swift in Sources */,
 				F73E0ADC2136A05300DD2960 /* UIColor+Extension.swift in Sources */,
 				F73E0ADA2136A05300DD2960 /* UIBarButtonItem+Extension.swift in Sources */,
