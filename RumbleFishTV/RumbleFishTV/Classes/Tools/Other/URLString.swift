@@ -8,12 +8,15 @@
 
 import Foundation
 
-let BaseURLString = "http://capi.douyucdn.cn/api/v1/"
+let BaseURLString1 = "http://capi.douyucdn.cn/api/v1/"
+let BaseURLString2 = "http://www.douyutv.com/api/v1/"
 
 // MARK: - 首页推荐
 // 2-12区游戏
-let GetHotCateURL = BaseURLString + "getHotCate"
+let GetHotCateURL = BaseURLString1 + "getHotCate"
 // 1区颜值
-let GetVerticalRoomURL = BaseURLString + "getVerticalRoom"
+let GetVerticalRoomURL = BaseURLString1 + "getVerticalRoom"
 // 0区热门
-let GetbigDataRoomURL = BaseURLString + "getbigDataRoom"
+let GetbigDataRoomURL = BaseURLString1 + "getbigDataRoom"
+// 无线轮播图
+let SlideURL = BaseURLString2 + "slide/6"

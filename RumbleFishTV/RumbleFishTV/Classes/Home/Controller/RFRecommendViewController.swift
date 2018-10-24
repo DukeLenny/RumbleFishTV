@@ -89,6 +89,10 @@ extension RFRecommendViewController {
 // MARK: - 请求数据
 extension RFRecommendViewController {
     private func requestData() {
+        recommendViewModel.requestBannerData {
+            self.cycleView.bannerModels = self.recommendViewModel.bannerModels
+        }
+        
         recommendViewModel.requestData {
             self.collectionView.reloadData()
         }

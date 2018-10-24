@@ -12,10 +12,13 @@ class RFRecommendViewModel {
     lazy var anchorModels: [RFAnchorModel] = [RFAnchorModel]()
     private lazy var hotAnchorModel: RFAnchorModel = RFAnchorModel()
     private lazy var prettyAnchorModel: RFAnchorModel = RFAnchorModel()
+    
+    lazy var bannerModels: [RFBannerModel] = [RFBannerModel]()
 }
 
 // MARK: - 发送网络请求
 extension RFRecommendViewModel {
+    // MARK: - 推荐
     func requestData(_ completionHandler: @escaping () -> Void) {
         let time = Date.currentTimeInterval()
         
@@ -96,6 +99,30 @@ extension RFRecommendViewModel {
         dispatchGroup.notify(queue: DispatchQueue.main) {
             self.anchorModels.insert(self.prettyAnchorModel, at: 0)
             self.anchorModels.insert(self.hotAnchorModel, at: 0)
+            
+            completionHandler()
+        }
+    }
+    
+    // MARK: - 无线轮播图
+    func requestBannerData(_ completionHandler: @escaping () -> Void) {
+        Network.request(urlString: SlideURL, parameters: ["version": "2.300"]) { (value, error) in
+            guard let value = value else {
+                print(error!.localizedDescription)
+                return;
+            }
+            
+            print(value)
+            guard let dic = value as? [String: NSObject] else { return }
+            guard let data = dic["data"] as? [[String: NSObject]] else { return }
+            
+            if !self.bannerModels.isEmpty {
+                self.bannerModels.removeAll()
+            }
+            for element in data {
+                let bannerModel = RFBannerModel(dic: element)
+                self.bannerModels.append(bannerModel)
+            }
             
             completionHandler()
         }

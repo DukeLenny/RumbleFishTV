@@ -8,24 +8,83 @@
 
 import UIKit
 
+private let kCellId = "RFRecommendBannerCollectionViewCell"
+
 class RFRecommendCycleView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var pageControl: UIPageControl!
+    
+    class func instance() -> RFRecommendCycleView {
+        return Bundle.main.loadNibNamed("RFRecommendCycleView", owner: nil, options: nil)?.first as! RFRecommendCycleView
     }
-    */
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         autoresizingMask = UIViewAutoresizing()
+        
+        collectionView.bounds = true
+        
+//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kCellId)
+        collectionView.register(UINib(nibName: "RFRecommendBannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kCellId)
     }
     
-    class func instance() -> RFRecommendCycleView {
-        return Bundle.main.loadNibNamed("RFRecommendCycleView", owner: nil, options: nil)?.first as! RFRecommendCycleView
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let collectionViewFlowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        collectionViewFlowLayout.itemSize = collectionView.bounds.size
+    }
+    
+    var bannerModels: [RFBannerModel]? {
+        didSet {
+            collectionView.reloadData()
+            
+            pageControl.numberOfPages = bannerModels?.count ?? 0
+        }
     }
 
+}
+
+// MARK: - Action
+extension RFRecommendCycleView {
+    
+}
+
+extension RFRecommendCycleView: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return bannerModels?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCellId, for: indexPath) as! RFRecommendBannerCollectionViewCell
+        cell.contentView.backgroundColor = UIColor.white
+        
+        let bannerModel: RFBannerModel! = bannerModels?[indexPath.item]
+        
+        cell.bannerModel = bannerModel
+        
+        return cell
+    }
+    
+    // UIScrollViewDelegate
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let bannerModels = bannerModels else { return }
+        if bannerModels.isEmpty { return }
+        
+        let offsetX = scrollView.contentOffset.x
+        let width = scrollView.bounds.width
+        var currentIndex: Int = 0
+        if offsetX < 0 {
+            currentIndex = 0
+        } else {
+            currentIndex = Int(offsetX / width)
+        }
+        if currentIndex >= bannerModels.count {
+            currentIndex = bannerModels.count - 1
+        }
+        
+        pageControl.currentPage = currentIndex
+    }
 }
