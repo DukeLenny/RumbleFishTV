@@ -46,6 +46,8 @@
 		F754F73D2149FF66001B55D8 /* RFNormalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F754F73B2149FF66001B55D8 /* RFNormalCollectionViewCell.xib */; };
 		F7562F652181C36000ABDD4B /* RFRecommendGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7562F642181C36000ABDD4B /* RFRecommendGameView.swift */; };
 		F7562F672181C4AB00ABDD4B /* RFRecommendGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7562F662181C4AB00ABDD4B /* RFRecommendGameView.xib */; };
+		F7562F6A2181CC3200ABDD4B /* RFRecommendGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7562F682181CC3200ABDD4B /* RFRecommendGameCollectionViewCell.swift */; };
+		F7562F6B2181CC3200ABDD4B /* RFRecommendGameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7562F692181CC3200ABDD4B /* RFRecommendGameCollectionViewCell.xib */; };
 		F75EE7A921742AF100A3FFBB /* RFRecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75EE7A821742AF100A3FFBB /* RFRecommendViewModel.swift */; };
 		F75EE7B3217437AD00A3FFBB /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75EE7B2217437AD00A3FFBB /* Date+Extension.swift */; };
 		F76610262139273900F2981F /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76610252139273900F2981F /* PageContentView.swift */; };
@@ -118,6 +120,8 @@
 		F754F73B2149FF66001B55D8 /* RFNormalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RFNormalCollectionViewCell.xib; sourceTree = "<group>"; };
 		F7562F642181C36000ABDD4B /* RFRecommendGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFRecommendGameView.swift; sourceTree = "<group>"; };
 		F7562F662181C4AB00ABDD4B /* RFRecommendGameView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RFRecommendGameView.xib; sourceTree = "<group>"; };
+		F7562F682181CC3200ABDD4B /* RFRecommendGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFRecommendGameCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7562F692181CC3200ABDD4B /* RFRecommendGameCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RFRecommendGameCollectionViewCell.xib; sourceTree = "<group>"; };
 		F75EE7A821742AF100A3FFBB /* RFRecommendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFRecommendViewModel.swift; sourceTree = "<group>"; };
 		F75EE7B2217437AD00A3FFBB /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		F76610252139273900F2981F /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 				F744160121806C2000164B28 /* RFRecommendBannerCollectionViewCell.xib */,
 				F7562F642181C36000ABDD4B /* RFRecommendGameView.swift */,
 				F7562F662181C4AB00ABDD4B /* RFRecommendGameView.xib */,
+				F7562F682181CC3200ABDD4B /* RFRecommendGameCollectionViewCell.swift */,
+				F7562F692181CC3200ABDD4B /* RFRecommendGameCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -504,6 +510,7 @@
 			files = (
 				F74A86FB212EC514001A858F /* Profile.storyboard in Resources */,
 				F71F5575214A533600C7E06E /* RFHighCollectionViewCell.xib in Resources */,
+				F7562F6B2181CC3200ABDD4B /* RFRecommendGameCollectionViewCell.xib in Resources */,
 				F74A86F9212EC4CD001A858F /* Follow.storyboard in Resources */,
 				F74A86F5212EC22D001A858F /* Home.storyboard in Resources */,
 				F74EBC9F212D44A100FE351B /* Assets.xcassets in Resources */,
@@ -594,6 +601,7 @@
 				F75EE7A921742AF100A3FFBB /* RFRecommendViewModel.swift in Sources */,
 				F73E0ADC2136A05300DD2960 /* UIColor+Extension.swift in Sources */,
 				F73E0ADA2136A05300DD2960 /* UIBarButtonItem+Extension.swift in Sources */,
+				F7562F6A2181CC3200ABDD4B /* RFRecommendGameCollectionViewCell.swift in Sources */,
 				F74EBCCF212D647100FE351B /* RFNavigationController.swift in Sources */,
 				F7562F652181C36000ABDD4B /* RFRecommendGameView.swift in Sources */,
 				F7E532FB214B60970071A919 /* Network.swift in Sources */,

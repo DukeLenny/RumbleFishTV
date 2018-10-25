@@ -15,9 +15,34 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RFRecommendGameView" customModule="RumbleFishTV" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="421" height="90"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wFH-fe-wQv">
+                    <rect key="frame" x="0.0" y="0.0" width="421" height="90"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="f8V-ew-bmn">
+                        <size key="itemSize" width="80" height="90"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="wFq-sF-qUM"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="wb2-bL-DhJ"/>
+                    </connections>
+                </collectionView>
+            </subviews>
             <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="wFH-fe-wQv" secondAttribute="trailing" id="4KE-7F-VFg"/>
+                <constraint firstItem="wFH-fe-wQv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CJj-d0-YkP"/>
+                <constraint firstItem="wFH-fe-wQv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ve1-6i-TqX"/>
+                <constraint firstAttribute="bottom" secondItem="wFH-fe-wQv" secondAttribute="bottom" id="Zzd-Qm-auS"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="collectionView" destination="wFH-fe-wQv" id="WvP-ZS-6fD"/>
+            </connections>
             <point key="canvasLocation" x="168.80000000000001" y="-105.24737631184409"/>
         </view>
     </objects>
