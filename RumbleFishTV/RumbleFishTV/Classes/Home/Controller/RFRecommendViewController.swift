@@ -17,6 +17,7 @@ private let kItemHeight: CGFloat = kItemWidth * 3 / 4
 private let kHeaderHeight: CGFloat = 50.0
 private let kPrettyItemHeight: CGFloat = kItemWidth * 4 / 3
 private let kCycleViewHeight: CGFloat = ScreenWidth * 3 / 8
+private let kGameViewHeight: CGFloat = 90.0
 
 private let kCollectionViewCellId = "RFNormalCollectionViewCell"
 private let kCollectionSectionHeaderViewId = "RFRecommendCollectionSectionHeaderView"
@@ -56,8 +57,14 @@ class RFRecommendViewController: UIViewController {
     
     private lazy var cycleView: RFRecommendCycleView = {
         let cycleView = RFRecommendCycleView.instance()
-        cycleView.frame = CGRect(x: 0, y: -kCycleViewHeight, width: ScreenWidth, height: kCycleViewHeight)
+        cycleView.frame = CGRect(x: 0, y: -(kCycleViewHeight + kGameViewHeight), width: ScreenWidth, height: kCycleViewHeight)
         return cycleView;
+    }()
+    
+    private lazy var gameView: RFRecommendGameView = {
+        let gameView = RFRecommendGameView.instance()
+        gameView.frame = CGRect(x: 0, y: -kGameViewHeight, width: ScreenWidth, height: kGameViewHeight)
+        return gameView
     }()
 
     // MARK: - LifeCycle
@@ -80,7 +87,8 @@ extension RFRecommendViewController {
         view.addSubview(collectionView)
         
         collectionView.addSubview(cycleView)
-        collectionView.contentInset = UIEdgeInsets(top: kCycleViewHeight, left: 0, bottom: 0, right: 0)
+        collectionView.addSubview(gameView)
+        collectionView.contentInset = UIEdgeInsets(top: kCycleViewHeight + kGameViewHeight, left: 0, bottom: 0, right: 0)
     }
     
     
