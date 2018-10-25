@@ -15,6 +15,8 @@ class RFRecommendCycleView: UIView {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var pageControl: UIPageControl!
     
+    private var timer: Timer?
+    
     class func instance() -> RFRecommendCycleView {
         return Bundle.main.loadNibNamed("RFRecommendCycleView", owner: nil, options: nil)?.first as! RFRecommendCycleView
     }
@@ -45,14 +47,34 @@ class RFRecommendCycleView: UIView {
             }
             
             pageControl.numberOfPages = bannerModels?.count ?? 0
+            
+            removeTimer()
+            if let bannerModels = bannerModels {
+                if !bannerModels.isEmpty {
+                   addTimer()
+                }
+            }
         }
     }
 
 }
 
-// MARK: - Action
+// MARK: - 定时器
 extension RFRecommendCycleView {
+    private func addTimer() {
+        timer = Timer(timeInterval: 3.0, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .commonModes)
+    }
     
+    private func removeTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    @objc private func onTimer() {
+        let offsetX = collectionView.contentOffset.x + collectionView.bounds.width
+        collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
+    }
 }
 
 extension RFRecommendCycleView: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -96,5 +118,15 @@ extension RFRecommendCycleView: UICollectionViewDelegate, UICollectionViewDataSo
         }
         
         pageControl.currentPage = currentIndex
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        removeTimer()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        guard let bannerModels = bannerModels else { return }
+        if bannerModels.isEmpty { return }
+        addTimer()
     }
 }
