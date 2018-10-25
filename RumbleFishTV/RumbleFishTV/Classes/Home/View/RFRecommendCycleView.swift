@@ -24,9 +24,7 @@ class RFRecommendCycleView: UIView {
         
         autoresizingMask = UIViewAutoresizing()
         
-        collectionView.bounces = true
-        
-//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kCellId)
+//        collectionView.bounces = true
         collectionView.register(UINib(nibName: "RFRecommendBannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kCellId)
     }
     
@@ -40,6 +38,11 @@ class RFRecommendCycleView: UIView {
     var bannerModels: [RFBannerModel]? {
         didSet {
             collectionView.reloadData()
+            if let bannerModels = bannerModels {
+                if !bannerModels.isEmpty {
+                    collectionView.scrollToItem(at: IndexPath(item: bannerModels.count * 100, section: 0), at: .left, animated: false)
+                }
+            }
             
             pageControl.numberOfPages = bannerModels?.count ?? 0
         }
@@ -54,14 +57,17 @@ extension RFRecommendCycleView {
 
 extension RFRecommendCycleView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return bannerModels?.count ?? 0
+//        return bannerModels?.count ?? 0
+        // 为了实现无线轮播
+        return (bannerModels?.count ?? 0) * 10000
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCellId, for: indexPath) as! RFRecommendBannerCollectionViewCell
         cell.contentView.backgroundColor = UIColor.white
         
-        let bannerModel: RFBannerModel! = bannerModels?[indexPath.item]
+//        let bannerModel: RFBannerModel = bannerModels![indexPath.item]
+        let bannerModel: RFBannerModel = bannerModels![indexPath.item % bannerModels!.count]
         
         cell.bannerModel = bannerModel
         
@@ -82,7 +88,8 @@ extension RFRecommendCycleView: UICollectionViewDelegate, UICollectionViewDataSo
 //            currentIndex = Int(offsetX / width)
             // 当当前页滚动到一半时索引改变
             let expectedOffsetX = offsetX + width / 2.0
-            currentIndex = Int(expectedOffsetX / width)
+//            currentIndex = Int(expectedOffsetX / width)
+            currentIndex = Int(expectedOffsetX / width) % bannerModels.count
         }
         if currentIndex >= bannerModels.count {
             currentIndex = bannerModels.count - 1
