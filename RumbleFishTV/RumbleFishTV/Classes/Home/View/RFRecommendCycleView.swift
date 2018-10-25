@@ -79,7 +79,10 @@ extension RFRecommendCycleView: UICollectionViewDelegate, UICollectionViewDataSo
         if offsetX < 0 {
             currentIndex = 0
         } else {
-            currentIndex = Int(offsetX / width)
+//            currentIndex = Int(offsetX / width)
+            // 当当前页滚动到一半时索引改变
+            let expectedOffsetX = offsetX + width / 2.0
+            currentIndex = Int(expectedOffsetX / width)
         }
         if currentIndex >= bannerModels.count {
             currentIndex = bannerModels.count - 1
