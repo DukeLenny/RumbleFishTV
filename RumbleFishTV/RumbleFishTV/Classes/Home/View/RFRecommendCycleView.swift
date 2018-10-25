@@ -24,7 +24,7 @@ class RFRecommendCycleView: UIView {
         
         autoresizingMask = UIViewAutoresizing()
         
-        collectionView.bounds = true
+        collectionView.bounces = true
         
 //        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kCellId)
         collectionView.register(UINib(nibName: "RFRecommendBannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kCellId)
