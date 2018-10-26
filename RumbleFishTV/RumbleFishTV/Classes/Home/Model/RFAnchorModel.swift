@@ -23,6 +23,7 @@ class RFAnchorModel: NSObject {
         }
     }
     @objc var tag_name: String = ""
+    @objc var icon_url: String = ""
     var icon_name: String = "home_header_normal"
     
     lazy var roomModels: [RFRoomModel] = [RFRoomModel]()

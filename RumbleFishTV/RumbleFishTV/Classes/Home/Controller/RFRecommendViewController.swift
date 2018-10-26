@@ -102,6 +102,8 @@ extension RFRecommendViewController {
         }
         
         recommendViewModel.requestData {
+            self.gameView.anchorModels = self.recommendViewModel.anchorModels
+            
             self.collectionView.reloadData()
         }
     }
