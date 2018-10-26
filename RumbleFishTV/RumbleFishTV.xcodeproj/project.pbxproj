@@ -31,6 +31,11 @@
 		F74A86F7212EC42B001A858F /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74A86F6212EC42B001A858F /* Live.storyboard */; };
 		F74A86F9212EC4CD001A858F /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74A86F8212EC4CD001A858F /* Follow.storyboard */; };
 		F74A86FB212EC514001A858F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74A86FA212EC514001A858F /* Profile.storyboard */; };
+		F74EB8172182DCE700EDBF83 /* RFGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74EB8162182DCE700EDBF83 /* RFGameViewController.swift */; };
+		F74EB8192182F1D800EDBF83 /* RFGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74EB8182182F1D800EDBF83 /* RFGameViewModel.swift */; };
+		F74EB81B2182F3E200EDBF83 /* RFGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74EB81A2182F3E200EDBF83 /* RFGameModel.swift */; };
+		F74EB81D2183093A00EDBF83 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74EB81C2183093A00EDBF83 /* BaseModel.swift */; };
+		F74EB81F21830ECD00EDBF83 /* RFBaseGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74EB81E21830ECD00EDBF83 /* RFBaseGameModel.swift */; };
 		F74EBC98212D449C00FE351B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74EBC97212D449C00FE351B /* AppDelegate.swift */; };
 		F74EBC9D212D449C00FE351B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F74EBC9B212D449C00FE351B /* Main.storyboard */; };
 		F74EBC9F212D44A100FE351B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F74EBC9E212D44A100FE351B /* Assets.xcassets */; };
@@ -99,6 +104,11 @@
 		F74A86F6212EC42B001A858F /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
 		F74A86F8212EC4CD001A858F /* Follow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Follow.storyboard; sourceTree = "<group>"; };
 		F74A86FA212EC514001A858F /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		F74EB8162182DCE700EDBF83 /* RFGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFGameViewController.swift; sourceTree = "<group>"; };
+		F74EB8182182F1D800EDBF83 /* RFGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFGameViewModel.swift; sourceTree = "<group>"; };
+		F74EB81A2182F3E200EDBF83 /* RFGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFGameModel.swift; sourceTree = "<group>"; };
+		F74EB81C2183093A00EDBF83 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		F74EB81E21830ECD00EDBF83 /* RFBaseGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFBaseGameModel.swift; sourceTree = "<group>"; };
 		F74EBC94212D449C00FE351B /* RumbleFishTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RumbleFishTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F74EBC97212D449C00FE351B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F74EBC9C212D449C00FE351B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -223,6 +233,7 @@
 			children = (
 				F73E0ACB21369BF500DD2960 /* RFHomeViewController.swift */,
 				F750E96C2147BBE000B0F7C1 /* RFRecommendViewController.swift */,
+				F74EB8162182DCE700EDBF83 /* RFGameViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -233,6 +244,8 @@
 				F7038A8221747A3600333E88 /* RFAnchorModel.swift */,
 				F7038A8421747F4A00333E88 /* RFRoomModel.swift */,
 				F74415FE2180599400164B28 /* RFBannerModel.swift */,
+				F74EB81A2182F3E200EDBF83 /* RFGameModel.swift */,
+				F74EB81E21830ECD00EDBF83 /* RFBaseGameModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -380,6 +393,7 @@
 		F74FCE672137CC1400AB28DD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F74EB81C2183093A00EDBF83 /* BaseModel.swift */,
 			);
 			name = Model;
 			path = RumbleFishTV/Classes/Main/Model;
@@ -389,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				F75EE7A821742AF100A3FFBB /* RFRecommendViewModel.swift */,
+				F74EB8182182F1D800EDBF83 /* RFGameViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -592,6 +607,7 @@
 				F75EE7B3217437AD00A3FFBB /* Date+Extension.swift in Sources */,
 				F73E0AD82136A05300DD2960 /* Bundle+Extension.swift in Sources */,
 				F73E0ADD2136A05300DD2960 /* UILabel+Extension.swift in Sources */,
+				F74EB81B2182F3E200EDBF83 /* RFGameModel.swift in Sources */,
 				F76610262139273900F2981F /* PageContentView.swift in Sources */,
 				F74FCE692137CD0B00AB28DD /* PageTitleView.swift in Sources */,
 				F73E0ADF2136A05300DD2960 /* Function.swift in Sources */,
@@ -600,6 +616,7 @@
 				F744160221806C2000164B28 /* RFRecommendBannerCollectionViewCell.swift in Sources */,
 				F75EE7A921742AF100A3FFBB /* RFRecommendViewModel.swift in Sources */,
 				F73E0ADC2136A05300DD2960 /* UIColor+Extension.swift in Sources */,
+				F74EB8192182F1D800EDBF83 /* RFGameViewModel.swift in Sources */,
 				F73E0ADA2136A05300DD2960 /* UIBarButtonItem+Extension.swift in Sources */,
 				F7562F6A2181CC3200ABDD4B /* RFRecommendGameCollectionViewCell.swift in Sources */,
 				F74EBCCF212D647100FE351B /* RFNavigationController.swift in Sources */,
@@ -612,8 +629,11 @@
 				F7520AF52177118300BFCED3 /* RFRecommendCycleView.swift in Sources */,
 				F73D6CC92148DE9200D6090D /* RFRecommendCollectionSectionHeaderView.swift in Sources */,
 				F73E0ADE2136A05300DD2960 /* Constant.swift in Sources */,
+				F74EB81D2183093A00EDBF83 /* BaseModel.swift in Sources */,
+				F74EB8172182DCE700EDBF83 /* RFGameViewController.swift in Sources */,
 				F73E0AE02136A05300DD2960 /* URLString.swift in Sources */,
 				F766102821392DFF00F2981F /* UIDevice+Extension.swift in Sources */,
+				F74EB81F21830ECD00EDBF83 /* RFBaseGameModel.swift in Sources */,
 				F74EBCCD212D623D00FE351B /* RFTabBarController.swift in Sources */,
 				F74415FF2180599400164B28 /* RFBannerModel.swift in Sources */,
 			);

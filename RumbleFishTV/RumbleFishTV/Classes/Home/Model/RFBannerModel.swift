@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RFBannerModel: NSObject {
+class RFBannerModel: BaseModel {
     @objc var title: String = ""
     @objc var pic_url: String = ""
     @objc private var room: [String: NSObject]? {
@@ -19,12 +19,4 @@ class RFBannerModel: NSObject {
         }
     }
     var roomModel: RFRoomModel?
-    
-    init(dic: [String: NSObject]) {
-        super.init()
-        
-        setValuesForKeys(dic)
-    }
-    
-    override func setValue(_ value: Any?, forUndefinedKey key: String) {}
 }

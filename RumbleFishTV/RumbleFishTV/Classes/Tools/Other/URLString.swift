@@ -20,3 +20,7 @@ let GetVerticalRoomURL = BaseURLString1 + "getVerticalRoom"
 let GetbigDataRoomURL = BaseURLString1 + "getbigDataRoom"
 // 无线轮播图
 let SlideURL = BaseURLString2 + "slide/6"
+
+// MARK: - 首页游戏
+// 所有游戏
+let GetColumnDetailURL = BaseURLString1 + "getColumnDetail"

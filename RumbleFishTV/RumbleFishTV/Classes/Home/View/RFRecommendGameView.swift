@@ -51,6 +51,7 @@ extension RFRecommendGameView: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCellId, for: indexPath) as! RFRecommendGameCollectionViewCell
         cell.contentView.backgroundColor = UIColor.white
+        cell.lineView.isHidden = true
         
         let anchorModel = anchorModels![indexPath.item]
         

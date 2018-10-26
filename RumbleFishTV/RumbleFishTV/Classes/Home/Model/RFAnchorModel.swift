@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RFAnchorModel: NSObject {
+class RFAnchorModel: RFBaseGameModel {
     @objc private var room_list: [[String : NSObject]]? {
         didSet {
             if let room_list = room_list {
@@ -22,23 +22,10 @@ class RFAnchorModel: NSObject {
             }
         }
     }
-    @objc var tag_name: String = ""
-    @objc var icon_url: String = ""
+    
     var icon_name: String = "home_header_normal"
     
     lazy var roomModels: [RFRoomModel] = [RFRoomModel]()
-    
-    override init() {
-        
-    }
-    
-    init(dic: [String : NSObject]) {
-        super.init()
-        
-        setValuesForKeys(dic)
-    }
-    
-    override func setValue(_ value: Any?, forUndefinedKey key: String) {}
     
 //    override func setValue(_ value: Any?, forKey key: String) {
 //        if key == "room_list" {
