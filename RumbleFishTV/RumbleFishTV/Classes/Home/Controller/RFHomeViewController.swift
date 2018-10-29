@@ -30,7 +30,9 @@ class RFHomeViewController: UIViewController {
         childViewControllers.append(recommendViewController)
         let gameViewController = RFGameViewController()
         childViewControllers.append(gameViewController)
-        for _ in 0..<2 {
+        let amuseViewController = RFAmuseViewController()
+        childViewControllers.append(amuseViewController)
+        for _ in 0..<1 {
             let childViewController = UIViewController()
             childViewController.view.backgroundColor = UIColor.random()
             childViewControllers.append(childViewController)

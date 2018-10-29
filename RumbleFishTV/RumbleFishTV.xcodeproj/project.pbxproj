@@ -49,6 +49,7 @@
 		F7520AF7217711B900BFCED3 /* RFRecommendCycleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7520AF6217711B900BFCED3 /* RFRecommendCycleView.xib */; };
 		F754F73C2149FF66001B55D8 /* RFNormalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754F73A2149FF66001B55D8 /* RFNormalCollectionViewCell.swift */; };
 		F754F73D2149FF66001B55D8 /* RFNormalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F754F73B2149FF66001B55D8 /* RFNormalCollectionViewCell.xib */; };
+		F75627892187042E003D9AE0 /* RFAmuseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75627882187042E003D9AE0 /* RFAmuseViewController.swift */; };
 		F7562F652181C36000ABDD4B /* RFRecommendGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7562F642181C36000ABDD4B /* RFRecommendGameView.swift */; };
 		F7562F672181C4AB00ABDD4B /* RFRecommendGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7562F662181C4AB00ABDD4B /* RFRecommendGameView.xib */; };
 		F7562F6A2181CC3200ABDD4B /* RFRecommendGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7562F682181CC3200ABDD4B /* RFRecommendGameCollectionViewCell.swift */; };
@@ -128,6 +129,7 @@
 		F7520AF6217711B900BFCED3 /* RFRecommendCycleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RFRecommendCycleView.xib; sourceTree = "<group>"; };
 		F754F73A2149FF66001B55D8 /* RFNormalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFNormalCollectionViewCell.swift; sourceTree = "<group>"; };
 		F754F73B2149FF66001B55D8 /* RFNormalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RFNormalCollectionViewCell.xib; sourceTree = "<group>"; };
+		F75627882187042E003D9AE0 /* RFAmuseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFAmuseViewController.swift; sourceTree = "<group>"; };
 		F7562F642181C36000ABDD4B /* RFRecommendGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFRecommendGameView.swift; sourceTree = "<group>"; };
 		F7562F662181C4AB00ABDD4B /* RFRecommendGameView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RFRecommendGameView.xib; sourceTree = "<group>"; };
 		F7562F682181CC3200ABDD4B /* RFRecommendGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFRecommendGameCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				F73E0ACB21369BF500DD2960 /* RFHomeViewController.swift */,
 				F750E96C2147BBE000B0F7C1 /* RFRecommendViewController.swift */,
 				F74EB8162182DCE700EDBF83 /* RFGameViewController.swift */,
+				F75627882187042E003D9AE0 /* RFAmuseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				F7562F6A2181CC3200ABDD4B /* RFRecommendGameCollectionViewCell.swift in Sources */,
 				F74EBCCF212D647100FE351B /* RFNavigationController.swift in Sources */,
 				F7562F652181C36000ABDD4B /* RFRecommendGameView.swift in Sources */,
+				F75627892187042E003D9AE0 /* RFAmuseViewController.swift in Sources */,
 				F7E532FB214B60970071A919 /* Network.swift in Sources */,
 				F73E0ADB2136A05300DD2960 /* UIButton+Extension.swift in Sources */,
 				F750E96D2147BBE000B0F7C1 /* RFRecommendViewController.swift in Sources */,
