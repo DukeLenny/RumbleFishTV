@@ -102,7 +102,14 @@ extension RFRecommendViewController {
         }
         
         recommendViewModel.requestData {
-            self.gameView.anchorModels = self.recommendViewModel.anchorModels
+            
+            var anchorModels = self.recommendViewModel.anchorModels
+            anchorModels.removeFirst()
+            anchorModels.removeFirst()
+            let anchorModel = RFAnchorModel()
+            anchorModel.tag_name = "更多"
+            anchorModels.append(anchorModel)
+            self.gameView.anchorModels = anchorModels
             
             self.collectionView.reloadData()
         }

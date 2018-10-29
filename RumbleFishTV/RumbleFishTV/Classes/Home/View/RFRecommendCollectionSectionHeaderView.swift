@@ -22,9 +22,9 @@ class CollectionSupplementaryLayer: CALayer {
 class RFRecommendCollectionSectionHeaderView: UICollectionReusableView {
 
     @IBOutlet private weak var contentView: UIView!
-    @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet private weak var textLabel: UILabel!
-    @IBOutlet private weak var moreButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var textLabel: UILabel!
+    @IBOutlet weak var moreButton: UIButton!
     
     var anchorModel: RFAnchorModel? {
         didSet {
@@ -52,4 +52,10 @@ class RFRecommendCollectionSectionHeaderView: UICollectionReusableView {
         
     }
     
+}
+
+extension RFRecommendCollectionSectionHeaderView {
+    class func instance() -> RFRecommendCollectionSectionHeaderView {
+        return Bundle.main.loadNibNamed("RFRecommendCollectionSectionHeaderView", owner: nil, options: nil)?.first as! RFRecommendCollectionSectionHeaderView
+    }
 }

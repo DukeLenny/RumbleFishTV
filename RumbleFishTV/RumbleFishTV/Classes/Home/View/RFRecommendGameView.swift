@@ -28,15 +28,8 @@ class RFRecommendGameView: UIView {
         collectionView.contentInset = UIEdgeInsets(top: 0, left: kContentInsetMargin, bottom: 0, right: kContentInsetMargin)
     }
     
-    var anchorModels: [RFAnchorModel]? {
+    var anchorModels: [RFBaseGameModel]? {
         didSet {
-            anchorModels?.removeFirst()
-            anchorModels?.removeFirst()
-            
-            let anchorModel = RFAnchorModel()
-            anchorModel.tag_name = "更多"
-            anchorModels?.append(anchorModel)
-            
             collectionView.reloadData()
         }
     }
