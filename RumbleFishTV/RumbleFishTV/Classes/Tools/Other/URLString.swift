@@ -24,3 +24,7 @@ let SlideURL = BaseURLString2 + "slide/6"
 // MARK: - 首页游戏
 // 所有游戏
 let GetColumnDetailURL = BaseURLString1 + "getColumnDetail"
+
+// MARK: - 首页娱乐
+// 娱乐
+let GetHotRoomURL = BaseURLString1 + "getHotRoom/2"

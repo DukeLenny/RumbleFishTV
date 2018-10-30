@@ -8,8 +8,7 @@
 
 import UIKit
 
-class RFRecommendViewModel {
-    lazy var anchorModels: [RFAnchorModel] = [RFAnchorModel]()
+class RFRecommendViewModel: RFBaseAnchorViewModel {
     private lazy var hotAnchorModel: RFAnchorModel = RFAnchorModel()
     private lazy var prettyAnchorModel: RFAnchorModel = RFAnchorModel()
     
@@ -78,21 +77,7 @@ extension RFRecommendViewModel {
         
         // 请求2-12区的游戏数据
         dispatchGroup.enter()
-        Network.request(urlString: GetHotCateURL, parameters: parameters) { (value, error) in
-            guard let value = value else {
-                print(error!.localizedDescription)
-                return
-            }
-            
-            print(value)
-            guard let dic = value as? [String : NSObject] else { return }
-            guard let data = dic["data"] as? [[String : NSObject]] else { return }
-            if !self.anchorModels.isEmpty { self.anchorModels.removeAll() }
-            for element in data {
-                let anchorModel = RFAnchorModel(dic: element)
-                self.anchorModels.append(anchorModel)
-            }
-            
+        requestAnchorData(urlString: GetHotCateURL, parameters: parameters) {
             dispatchGroup.leave()
         }
         

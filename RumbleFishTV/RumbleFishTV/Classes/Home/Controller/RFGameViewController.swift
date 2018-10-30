@@ -9,8 +9,8 @@
 import UIKit
 
 private let kEdgeInsetMargin: CGFloat = 10.0
-private let kItemWidth: CGFloat = (ScreenWidth - 2 * kEdgeInsetMargin) / 3
-private let kItemHeight: CGFloat = kItemWidth * 6 / 5
+private let kCellWidth: CGFloat = (ScreenWidth - 2 * kEdgeInsetMargin) / 3
+private let kCellHeight: CGFloat = kCellWidth * 6 / 5
 private let kHeaderHeight: CGFloat = 50.0
 private let kTopContentViewHeight: CGFloat = 90.0
 private let kCellId = "RFRecommendGameCollectionViewCell"
@@ -24,7 +24,7 @@ class RFGameViewController: UIViewController {
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
         collectionViewFlowLayout.minimumLineSpacing = 0.0
         collectionViewFlowLayout.minimumInteritemSpacing = 0.0
-        collectionViewFlowLayout.itemSize = CGSize(width: kItemWidth, height: kItemHeight)
+        collectionViewFlowLayout.itemSize = CGSize(width: kCellWidth, height: kCellHeight)
         collectionViewFlowLayout.headerReferenceSize = CGSize(width: ScreenWidth, height: kHeaderHeight)
         collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: kEdgeInsetMargin, bottom: 0, right: kEdgeInsetMargin)
         //        collectionViewFlowLayout.scrollDirection = .horizontal
