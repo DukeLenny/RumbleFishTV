@@ -8,10 +8,29 @@
 
 import UIKit
 
+private let kMenuViewHeight: CGFloat = 200.0
+
 class RFAmuseViewController: RFBaseAnchorViewController {
     
     private lazy var amuseViewModel: RFAmuseViewModel = RFAmuseViewModel()
+    
+    private lazy var menuView: RFAmuseMenuView = {
+        let menuView = RFAmuseMenuView.instance()
+        menuView.frame = CGRect(x: 0, y: -kMenuViewHeight, width: ScreenWidth, height: kMenuViewHeight)
+        return menuView
+    }()
 
+}
+
+// MARK: - SetUI
+extension RFAmuseViewController {
+    override func setUI() {
+        super.setUI()
+        
+        collectionView.addSubview(menuView)
+        
+        collectionView.contentInset = UIEdgeInsets(top: kMenuViewHeight, left: 0, bottom: 0, right: 0)
+    }
 }
 
 // MARK: - RequestData
