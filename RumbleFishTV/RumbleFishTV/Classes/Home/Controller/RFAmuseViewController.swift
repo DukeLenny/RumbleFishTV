@@ -38,7 +38,11 @@ extension RFAmuseViewController {
     override func requestData() {
         baseAnchorViewModel = amuseViewModel
         amuseViewModel.requestAmuseData {
-           self.collectionView.reloadData()
+            self.collectionView.reloadData()
+            
+            var models = self.amuseViewModel.anchorModels
+            models.removeFirst()
+            self.menuView.anchorModels = models
         }
     }
 }

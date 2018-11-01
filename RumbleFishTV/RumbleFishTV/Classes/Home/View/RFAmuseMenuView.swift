@@ -34,20 +34,49 @@ class RFAmuseMenuView: UIView {
         let collectionViewFlowLayout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         collectionViewFlowLayout.itemSize = collectionView.bounds.size
     }
+    
+    var anchorModels: [RFAnchorModel]? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
 
 }
 
 extension RFAmuseMenuView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        var number: Int = 0
+        if let models = anchorModels {
+            if !models.isEmpty {
+                number = (models.count - 1) / 8 + 1
+            }
+        }
+        pageControl.numberOfPages = number
+        return number
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCellId, for: indexPath) as! RFAmuseMenuCollectionViewCell
         cell.contentView.backgroundColor = UIColor.white
         
-        
+        setDataWithCell(cell, indexPath: indexPath)
         
         return cell
+    }
+    
+    private func setDataWithCell(_ cell: RFAmuseMenuCollectionViewCell, indexPath: IndexPath) {
+        let models = anchorModels!
+        /*
+         item 0: index 0~7
+         item 1: index 8~15
+         item 2: index 16~23
+         ...
+         */
+        let startIndex = indexPath.item * 8
+        var endIndex = (indexPath.item + 1) * 8 - 1
+        if endIndex >= models.count {
+            endIndex = models.count - 1
+        }
+        cell.anchorModels = Array(models[startIndex...endIndex])
     }
 }

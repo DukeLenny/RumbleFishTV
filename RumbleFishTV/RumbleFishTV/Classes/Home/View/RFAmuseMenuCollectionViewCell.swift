@@ -29,18 +29,27 @@ class RFAmuseMenuCollectionViewCell: UICollectionViewCell {
         let itemHeight = collectionView.bounds.height / 2
         collectionViewFlowLayout.itemSize = CGSize(width: itemWidth, height: itemHeight)
     }
+    
+    var anchorModels: [RFAnchorModel]? {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
 
 }
 
 extension RFAmuseMenuCollectionViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        return anchorModels?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCellId, for: indexPath) as! RFRecommendGameCollectionViewCell
-        cell.contentView.backgroundColor = UIColor.random()
+        cell.contentView.backgroundColor = UIColor.white
+        cell.lineView.isHidden = true
         
+        let anchorModel = anchorModels![indexPath.item]
+        cell.anchorModel = anchorModel
         
         return cell
     }
