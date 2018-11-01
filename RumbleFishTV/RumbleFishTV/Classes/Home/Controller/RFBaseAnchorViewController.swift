@@ -80,10 +80,18 @@ extension RFBaseAnchorViewController {
 
 extension RFBaseAnchorViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        if baseAnchorViewModel == nil {
+            return 1
+        }
+        
         return baseAnchorViewModel.anchorModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if baseAnchorViewModel == nil {
+            return 20
+        }
+        
         let anchorModel = baseAnchorViewModel.anchorModels[section]
         return anchorModel.roomModels.count
     }
@@ -91,6 +99,10 @@ extension RFBaseAnchorViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCollectionViewCellId, for: indexPath) as! RFNormalCollectionViewCell
         cell.contentView.backgroundColor = UIColor.white
+        
+        if baseAnchorViewModel == nil {
+            return cell
+        }
         
         let anchorModel = baseAnchorViewModel.anchorModels[indexPath.section]
         let roomModel = anchorModel.roomModels[indexPath.item]
@@ -102,6 +114,10 @@ extension RFBaseAnchorViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kCollectionSectionHeaderViewId, for: indexPath) as! RFRecommendCollectionSectionHeaderView
+        
+        if baseAnchorViewModel == nil {
+            return supplementaryView
+        }
         
         let anchorModel = baseAnchorViewModel.anchorModels[indexPath.section]
         

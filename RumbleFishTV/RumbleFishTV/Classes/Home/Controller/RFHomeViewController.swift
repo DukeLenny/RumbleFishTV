@@ -32,11 +32,8 @@ class RFHomeViewController: UIViewController {
         childViewControllers.append(gameViewController)
         let amuseViewController = RFAmuseViewController()
         childViewControllers.append(amuseViewController)
-        for _ in 0..<1 {
-            let childViewController = UIViewController()
-            childViewController.view.backgroundColor = UIColor.random()
-            childViewControllers.append(childViewController)
-        }
+        let funnyViewController = RFFunnyViewController()
+        childViewControllers.append(funnyViewController)
         
         let pageContentView = PageContentView(frame: CGRect(x: 0.0, y: pageContentViewY, width: ScreenWidth, height: pageContentViewHeight), parentViewController: self, childViewControllers: childViewControllers)
         pageContentView.delegate = self
