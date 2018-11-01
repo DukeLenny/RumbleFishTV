@@ -79,4 +79,26 @@ extension RFAmuseMenuView: UICollectionViewDelegate, UICollectionViewDataSource 
         }
         cell.anchorModels = Array(models[startIndex...endIndex])
     }
+    
+    // UIScrollViewDelegate
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let models = anchorModels else { return }
+        if models.isEmpty { return }
+        
+        let offsetX = scrollView.contentOffset.x
+        let width = scrollView.bounds.width
+        var currentIndex: Int = 0
+        if offsetX < 0 {
+            currentIndex = 0
+        } else {
+            let expectedOffsetX = offsetX + width / 2.0
+            currentIndex = Int(expectedOffsetX / width)
+        }
+        let count = pageControl.numberOfPages
+        if currentIndex >= count {
+            currentIndex = count - 1
+        }
+        
+        pageControl.currentPage = currentIndex
+    }
 }
