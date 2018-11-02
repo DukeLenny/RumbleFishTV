@@ -16,7 +16,7 @@ private let kTopContentViewHeight: CGFloat = 90.0
 private let kCellId = "RFRecommendGameCollectionViewCell"
 private let kHeaderId = "RFRecommendCollectionSectionHeaderView"
 
-class RFGameViewController: UIViewController {
+class RFGameViewController: BaseViewController {
     
     private lazy var gameViewModel: RFGameViewModel = RFGameViewModel()
     
@@ -60,8 +60,6 @@ class RFGameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setUI()
         
         requestData()
     }
@@ -70,15 +68,19 @@ class RFGameViewController: UIViewController {
 
 // MARK: - SetUI
 extension RFGameViewController {
-    private func setUI() {
-       view.backgroundColor = UIColor.white
+    override func setUI() {
+        view.backgroundColor = UIColor.white
         
-       view.addSubview(collectionView)
+        view.addSubview(collectionView)
         
-       collectionView.addSubview(topHeaderView)
-       collectionView.addSubview(gameView)
+        collectionView.addSubview(topHeaderView)
+        collectionView.addSubview(gameView)
         
-       collectionView.contentInset = UIEdgeInsets(top: kHeaderHeight + kTopContentViewHeight, left: 0, bottom: 0, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: kHeaderHeight + kTopContentViewHeight, left: 0, bottom: 0, right: 0)
+        
+        contentView = collectionView
+        
+        super.setUI()
     }
 }
 
@@ -89,6 +91,8 @@ extension RFGameViewController {
             self.gameView.anchorModels = Array(self.gameViewModel.gameModels[0..<10])
             
             self.collectionView.reloadData()
+            
+            self.hideAnimationImageView()
         }
     }
 }

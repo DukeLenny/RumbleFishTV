@@ -20,7 +20,7 @@ private let kCollectionViewCellId = "RFNormalCollectionViewCell"
 let kPrettyCollectionViewCellId = "RFHighCollectionViewCell"
 private let kCollectionSectionHeaderViewId = "RFRecommendCollectionSectionHeaderView"
 
-class RFBaseAnchorViewController: UIViewController {
+class RFBaseAnchorViewController: BaseViewController {
     
     var baseAnchorViewModel: RFBaseAnchorViewModel!
     
@@ -52,8 +52,6 @@ class RFBaseAnchorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setUI()
         
         requestData()
     }
@@ -62,10 +60,14 @@ class RFBaseAnchorViewController: UIViewController {
 
 // MARK: - SetUI
 extension RFBaseAnchorViewController {
-    @objc func setUI() {
+    override func setUI() {
         view.backgroundColor = UIColor.white
         
         view.addSubview(collectionView)
+        
+        contentView = collectionView
+        
+        super.setUI()
     }
     
     

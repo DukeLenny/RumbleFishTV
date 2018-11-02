@@ -43,6 +43,8 @@ extension RFAmuseViewController {
             var models = self.amuseViewModel.anchorModels
             models.removeFirst()
             self.menuView.anchorModels = models
+            
+            self.hideAnimationImageView()
         }
     }
 }

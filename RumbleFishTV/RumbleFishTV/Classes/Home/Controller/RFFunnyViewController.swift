@@ -38,6 +38,8 @@ extension RFFunnyViewController {
         baseAnchorViewModel = funnyViewModel
         funnyViewModel.requestFunnyData {
             self.collectionView.reloadData()
+            
+            self.hideAnimationImageView()
         }
     }
 }

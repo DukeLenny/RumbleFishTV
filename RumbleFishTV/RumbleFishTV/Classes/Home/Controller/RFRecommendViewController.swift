@@ -63,6 +63,8 @@ extension RFRecommendViewController {
             self.gameView.anchorModels = anchorModels
             
             self.collectionView.reloadData()
+            
+            self.hideAnimationImageView()
         }
     }
 }
