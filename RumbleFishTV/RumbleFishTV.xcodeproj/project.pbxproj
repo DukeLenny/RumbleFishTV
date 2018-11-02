@@ -68,6 +68,8 @@
 		F76610262139273900F2981F /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76610252139273900F2981F /* PageContentView.swift */; };
 		F766102821392DFF00F2981F /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766102721392DFF00F2981F /* UIDevice+Extension.swift */; };
 		F7BA1D33218C1CF900646537 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1D32218C1CF900646537 /* BaseViewController.swift */; };
+		F7BA1D39218C478600646537 /* RFRoomShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1D38218C478600646537 /* RFRoomShowViewController.swift */; };
+		F7BA1D3B218C48A800646537 /* RFRoomNormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BA1D3A218C48A800646537 /* RFRoomNormalViewController.swift */; };
 		F7E532FB214B60970071A919 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E532FA214B60970071A919 /* Network.swift */; };
 /* End PBXBuildFile section */
 
@@ -158,6 +160,8 @@
 		F76610252139273900F2981F /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		F766102721392DFF00F2981F /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		F7BA1D32218C1CF900646537 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F7BA1D38218C478600646537 /* RFRoomShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFRoomShowViewController.swift; sourceTree = "<group>"; };
+		F7BA1D3A218C48A800646537 /* RFRoomNormalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFRoomNormalViewController.swift; sourceTree = "<group>"; };
 		F7E532FA214B60970071A919 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -335,6 +339,7 @@
 			children = (
 				F74EBCCB212D585300FE351B /* Tools */,
 				F74EBCC9212D585300FE351B /* Main */,
+				F7BA1D34218C46E800646537 /* Room */,
 				F74EBCC7212D585300FE351B /* Home */,
 				F74EBCC8212D585300FE351B /* Live */,
 				F74EBCC6212D585300FE351B /* Follow */,
@@ -439,6 +444,39 @@
 				F757FDA9218AFE5000510591 /* RFFunnyViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F7BA1D34218C46E800646537 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				F7BA1D36218C46E800646537 /* Model */,
+				F7BA1D37218C46E800646537 /* View */,
+				F7BA1D35218C46E800646537 /* Controller */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		F7BA1D35218C46E800646537 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F7BA1D38218C478600646537 /* RFRoomShowViewController.swift */,
+				F7BA1D3A218C48A800646537 /* RFRoomNormalViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F7BA1D36218C46E800646537 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F7BA1D37218C46E800646537 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F7E532F9214B5FE00071A919 /* Network */ = {
@@ -638,6 +676,7 @@
 			files = (
 				F7038A8321747A3600333E88 /* RFAnchorModel.swift in Sources */,
 				F74EBC98212D449C00FE351B /* AppDelegate.swift in Sources */,
+				F7BA1D3B218C48A800646537 /* RFRoomNormalViewController.swift in Sources */,
 				F757FDAA218AFE5000510591 /* RFFunnyViewModel.swift in Sources */,
 				F7038A8521747F4A00333E88 /* RFRoomModel.swift in Sources */,
 				F75EE7B3217437AD00A3FFBB /* Date+Extension.swift in Sources */,
@@ -650,6 +689,7 @@
 				F74FCE692137CD0B00AB28DD /* PageTitleView.swift in Sources */,
 				F73E0ADF2136A05300DD2960 /* Function.swift in Sources */,
 				F7BA1D33218C1CF900646537 /* BaseViewController.swift in Sources */,
+				F7BA1D39218C478600646537 /* RFRoomShowViewController.swift in Sources */,
 				F73E0ACC21369BF500DD2960 /* RFHomeViewController.swift in Sources */,
 				F72B1E322176C79400C2A0C9 /* RFBaseCollectionViewCell.swift in Sources */,
 				F744160221806C2000164B28 /* RFRecommendBannerCollectionViewCell.swift in Sources */,

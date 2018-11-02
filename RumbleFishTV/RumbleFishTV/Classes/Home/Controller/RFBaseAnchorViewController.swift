@@ -80,7 +80,7 @@ extension RFBaseAnchorViewController {
     }
 }
 
-extension RFBaseAnchorViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension RFBaseAnchorViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         if baseAnchorViewModel == nil {
             return 1
@@ -126,5 +126,24 @@ extension RFBaseAnchorViewController: UICollectionViewDelegate, UICollectionView
         supplementaryView.anchorModel = anchorModel
         
         return supplementaryView
+    }
+}
+
+extension RFBaseAnchorViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if baseAnchorViewModel == nil {
+            return
+        }
+        
+        let anchorModel = baseAnchorViewModel.anchorModels[indexPath.section]
+        let roomModel = anchorModel.roomModels[indexPath.item]
+        
+        if roomModel.isVertical == 1 {
+            let vc = RFRoomShowViewController()
+            present(vc, animated: true, completion: nil)
+        } else {
+            let vc = RFRoomNormalViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
