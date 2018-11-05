@@ -13,23 +13,24 @@ class RFNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let popGestureRecognizer = interactivePopGestureRecognizer {
+            if let gestureView = popGestureRecognizer.view {
+                if let targets = popGestureRecognizer.value(forKey: "_targets") as? [NSObject] {
+                    if let targetObjc = targets.first {
+                        if let target = targetObjc.value(forKey: "target") {
+                            let action = Selector(("handleNavigationTransition:"))
+                            let panGestureRecognizer = UIPanGestureRecognizer(target: target, action: action)
+                            gestureView.addGestureRecognizer(panGestureRecognizer)
+                        }
+                    }
+                }
+            }
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        viewController.hidesBottomBarWhenPushed = true
+        super.pushViewController(viewController, animated: animated)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
