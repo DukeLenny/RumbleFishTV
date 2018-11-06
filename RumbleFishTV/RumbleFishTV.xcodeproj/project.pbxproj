@@ -24,6 +24,8 @@
 		F73E0ADE2136A05300DD2960 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E0AD52136A05300DD2960 /* Constant.swift */; };
 		F73E0ADF2136A05300DD2960 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E0AD62136A05300DD2960 /* Function.swift */; };
 		F73E0AE02136A05300DD2960 /* URLString.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E0AD72136A05300DD2960 /* URLString.swift */; };
+		F73E6A63219137F800EFBFF4 /* RFTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E6A61219137F800EFBFF4 /* RFTestViewController.swift */; };
+		F73E6A64219137F800EFBFF4 /* RFTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73E6A62219137F800EFBFF4 /* RFTestViewController.xib */; };
 		F73F4E9D2187E9DF00012174 /* RFAmuseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F4E9C2187E9DF00012174 /* RFAmuseViewModel.swift */; };
 		F73F4EA12188489300012174 /* RFBaseAnchorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F4EA02188489300012174 /* RFBaseAnchorViewModel.swift */; };
 		F73F4EA32188587300012174 /* RFBaseAnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73F4EA22188587300012174 /* RFBaseAnchorViewController.swift */; };
@@ -110,6 +112,8 @@
 		F73E0AD52136A05300DD2960 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F73E0AD62136A05300DD2960 /* Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		F73E0AD72136A05300DD2960 /* URLString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLString.swift; sourceTree = "<group>"; };
+		F73E6A61219137F800EFBFF4 /* RFTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFTestViewController.swift; sourceTree = "<group>"; };
+		F73E6A62219137F800EFBFF4 /* RFTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RFTestViewController.xib; sourceTree = "<group>"; };
 		F73F4E9C2187E9DF00012174 /* RFAmuseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFAmuseViewModel.swift; sourceTree = "<group>"; };
 		F73F4EA02188489300012174 /* RFBaseAnchorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFBaseAnchorViewModel.swift; sourceTree = "<group>"; };
 		F73F4EA22188587300012174 /* RFBaseAnchorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFBaseAnchorViewController.swift; sourceTree = "<group>"; };
@@ -461,6 +465,8 @@
 			children = (
 				F7BA1D38218C478600646537 /* RFRoomShowViewController.swift */,
 				F7BA1D3A218C48A800646537 /* RFRoomNormalViewController.swift */,
+				F73E6A61219137F800EFBFF4 /* RFTestViewController.swift */,
+				F73E6A62219137F800EFBFF4 /* RFTestViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -594,6 +600,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F73E6A64219137F800EFBFF4 /* RFTestViewController.xib in Resources */,
 				F74A86FB212EC514001A858F /* Profile.storyboard in Resources */,
 				F71F5575214A533600C7E06E /* RFHighCollectionViewCell.xib in Resources */,
 				F7562F6B2181CC3200ABDD4B /* RFRecommendGameCollectionViewCell.xib in Resources */,
@@ -720,6 +727,7 @@
 				F74EB81F21830ECD00EDBF83 /* RFBaseGameModel.swift in Sources */,
 				F74EBCCD212D623D00FE351B /* RFTabBarController.swift in Sources */,
 				F74415FF2180599400164B28 /* RFBannerModel.swift in Sources */,
+				F73E6A63219137F800EFBFF4 /* RFTestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

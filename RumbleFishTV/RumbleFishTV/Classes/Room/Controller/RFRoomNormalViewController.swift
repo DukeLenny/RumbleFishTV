@@ -30,6 +30,10 @@ class RFRoomNormalViewController: UIViewController { // , UIGestureRecognizerDel
         
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        present(RFTestViewController(), animated: true, completion: nil)
+    }
 
 }
 
