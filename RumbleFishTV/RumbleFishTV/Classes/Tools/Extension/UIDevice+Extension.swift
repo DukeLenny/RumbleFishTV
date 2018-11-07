@@ -9,15 +9,16 @@
 import UIKit
 
 extension UIDevice {
-    // #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
     class func isIPhone() -> Bool {
-        return UI_USER_INTERFACE_IDIOM() == .phone
+//        return UI_USER_INTERFACE_IDIOM() == .phone
+        return current.userInterfaceIdiom == .phone
     }
     
-    // #define SCREEN_MAX_LENGTH (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))
-    // #define IS_IPHONE_X (IS_IPHONE && SCREEN_MAX_LENGTH == 812.0)
-    class func isIPhoneX() -> Bool {
+//    iPhone XR：828px x 1792px @2x
+//    iPhone XS Max: 1242px x 2688px @3x
+    // IPhoneXSeries包括iPhone X, iPhone XS, iPhone XR, iPhone XS Max
+    class func isIPhoneXSeries() -> Bool {
         let screenMaxLength = max(ScreenWidth, ScreenHeight)
-        return isIPhone() && screenMaxLength == 812.0
+        return isIPhone() && (screenMaxLength == 812.0 || screenMaxLength == 896.0)
     }
 }

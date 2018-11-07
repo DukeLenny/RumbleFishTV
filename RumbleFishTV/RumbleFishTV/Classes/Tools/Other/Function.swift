@@ -32,7 +32,7 @@ func setAutomaticallyAdjustsScrollViewInsetsFalse(scrollView: UIScrollView, vc: 
 func navigationBarHeight() -> CGFloat {
     let viewController = UIViewController()
     let navigationController = UINavigationController(rootViewController: viewController)
-    return navigationController.navigationBar.bounds.size.height
+    return navigationController.navigationBar.bounds.height
 }
 
 //MARK: - 获取选项卡的高度
