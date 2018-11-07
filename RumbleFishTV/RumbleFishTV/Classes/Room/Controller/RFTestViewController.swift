@@ -17,7 +17,8 @@ class RFTestViewController: UIViewController {
     private var captureSession: AVCaptureSession?
     private var captureVideoPreviewLayer: AVCaptureVideoPreviewLayer?
     
-    private var audioConnection: AVCaptureConnection?
+    private var videoInput: AVCaptureDeviceInput?
+    private var videoOutput: AVCaptureVideoDataOutput?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,19 @@ extension RFTestViewController {
         captureVideoPreviewLayer = nil
     }
     
+    @IBAction func switchScene() {
+        guard var position = videoInput?.device.position else { return }
+        position = position == .front ? .back : .front
+        let devices = AVCaptureDevice.devices(for: .video)
+        guard let captureDevice = devices.filter({ $0.position == position }).first else { return }
+        guard let captureInput = try? AVCaptureDeviceInput(device: captureDevice) else { return }
+        captureSession?.beginConfiguration()
+        captureSession?.removeInput(videoInput!)
+        captureSession?.addInput(captureInput)
+        captureSession?.commitConfiguration()
+        videoInput = captureInput
+    }
+    
     private func setVideoInputOutput() {
         // 添加视频输入源
         let devices = AVCaptureDevice.devices(for: .video)
@@ -66,11 +80,13 @@ extension RFTestViewController {
         guard let captureDevice = devices.filter({ $0.position == .front }).first else { return }
         guard let captureInput = try? AVCaptureDeviceInput(device: captureDevice) else { return }
         captureSession?.addInput(captureInput)
+        videoInput = captureInput
         
         // 添加视频输出源
         let captureOutput = AVCaptureVideoDataOutput()
         captureOutput.setSampleBufferDelegate(self, queue: videoQueue)
         captureSession?.addOutput(captureOutput)
+        videoOutput = captureOutput
     }
     
     private func setAudioInputOutput() {
@@ -83,16 +99,16 @@ extension RFTestViewController {
         let captureOutput = AVCaptureAudioDataOutput()
         captureOutput.setSampleBufferDelegate(self, queue: audioQueue)
         captureSession?.addOutput(captureOutput)
-        audioConnection = captureOutput.connection(with: .audio)
+//        audioConnection = captureOutput.connection(with: .audio)
     }
 }
 
 extension RFTestViewController: AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAudioDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        if connection == audioConnection {
-            print("DidOutput[Audio]SampleBuffer.")
-        } else {
+        if connection == videoOutput?.connection(with: .video) {
             print("DidOutput[Video]SampleBuffer.")
+        } else {
+            print("DidOutput[Audio]SampleBuffer.")
         }
     }
 }
