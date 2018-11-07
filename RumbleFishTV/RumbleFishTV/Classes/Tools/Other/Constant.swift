@@ -31,4 +31,6 @@ let HomeIndicatorHeight: CGFloat = UIDevice.isIPhoneX() ? 34.0 : 0.0
 let BottomBarHeight = tabBarHeight() + HomeIndicatorHeight
 
 let SystemVersion = UIDevice.current.systemVersion
+
+let DocumentPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
 		

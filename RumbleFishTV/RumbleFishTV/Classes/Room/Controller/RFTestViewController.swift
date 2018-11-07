@@ -19,6 +19,8 @@ class RFTestViewController: UIViewController {
     
     private var videoInput: AVCaptureDeviceInput?
     private var videoOutput: AVCaptureVideoDataOutput?
+    
+    private var movieFileOutput: AVCaptureMovieFileOutput?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +43,14 @@ extension RFTestViewController {
         // 设置音频的输入&输出
         setAudioInputOutput()
         
-        // 添加视频预览层(可选)
+        // 设置文件输出(可选,用于测试视频是否录制成功)
+        let movieFileOutput = AVCaptureMovieFileOutput()
+        captureSession.addOutput(movieFileOutput)
+        let movieFileConnect = movieFileOutput.connection(with: .video)
+        movieFileConnect?.preferredVideoStabilizationMode = .auto
+        self.movieFileOutput = movieFileOutput
+        
+        // 添加视频预览层(可选,用于提升用户体验)
         let captureVideoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         self.captureVideoPreviewLayer = captureVideoPreviewLayer
         captureVideoPreviewLayer.frame = view.bounds
@@ -49,9 +58,16 @@ extension RFTestViewController {
         
         // 开始采集
         captureSession.startRunning()
+        
+        // 开始写入文件
+        let path = DocumentPath + "/test.mp4"
+        let fileURL = URL(fileURLWithPath: path)
+        movieFileOutput.startRecording(to: fileURL, recordingDelegate: self)
     }
     
     @IBAction func stopCapture() {
+        movieFileOutput?.stopRecording()
+        movieFileOutput = nil
         captureSession?.stopRunning()
         captureSession = nil
         captureVideoPreviewLayer?.removeFromSuperlayer()
@@ -99,7 +115,7 @@ extension RFTestViewController {
         let captureOutput = AVCaptureAudioDataOutput()
         captureOutput.setSampleBufferDelegate(self, queue: audioQueue)
         captureSession?.addOutput(captureOutput)
-//        audioConnection = captureOutput.connection(with: .audio)
+//        audioConnection = captureOutput.connection(with: .audio) // 这句代码放到addOutput之后
     }
 }
 
@@ -110,5 +126,15 @@ extension RFTestViewController: AVCaptureVideoDataOutputSampleBufferDelegate, AV
         } else {
             print("DidOutput[Audio]SampleBuffer.")
         }
+    }
+}
+
+extension RFTestViewController: AVCaptureFileOutputRecordingDelegate {
+    func fileOutput(_ output: AVCaptureFileOutput, didStartRecordingTo fileURL: URL, from connections: [AVCaptureConnection]) {
+        print("DidStartRecording.")
+    }
+    
+    func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
+        print("DidFinishRecording.")
     }
 }
